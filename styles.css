@@ -1,0 +1,527 @@
+/* ============================================
+   NEXA — Plataforma de Alfabetización Digital
+   Estilos Unificados — Senior-Friendly
+   Versión 2.0 — Con secciones de sub-opciones
+   ============================================ */
+
+/* --- Variables de Color y Tipografía --- */
+:root {
+  --color-fondo: #FEFDF8;
+  --color-texto: #1A1A1A;
+  --color-primario: #1A5276;
+  --color-primario-hover: #154360;
+
+  /* Colores por sección */
+  --color-salud: #1A7A4A;
+  --color-salud-hover: #145E38;
+  --color-ocio: #B7410E;
+  --color-ocio-hover: #922E0A;
+  --color-servicios: #5B2C6F;
+  --color-servicios-hover: #4A235A;
+  --color-movilidad: #1A5276;
+  --color-movilidad-hover: #154360;
+  --color-tramites: #78281F;
+  --color-tramites-hover: #5E201A;
+
+  --color-acento: #F39C12;
+  --color-borde: #D5D8DC;
+  --color-volver: #1A5276;
+  --color-volver-hover: #154360;
+  --sombra: 0 4px 16px rgba(0,0,0,0.12);
+  --radio: 16px;
+  --fuente-base: 22px;
+}
+
+/* --- Reset y Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: var(--fuente-base); scroll-behavior: smooth; }
+
+body {
+  font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ============================================
+   CABECERA PRINCIPAL
+   ============================================ */
+.cabecera {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 28px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-shadow: var(--sombra);
+}
+
+.cabecera-logo h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: 2px; }
+.cabecera-logo .slogan { font-size: 0.85rem; opacity: 0.85; font-style: italic; }
+
+.indicador-posicion {
+  background-color: var(--color-acento);
+  color: #1A1A1A;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 30px;
+}
+
+.controles-accesibilidad { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+.btn-tamanio {
+  background-color: white;
+  color: var(--color-primario);
+  border: 3px solid white;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-tamanio:hover, .btn-tamanio:focus {
+  background-color: var(--color-acento);
+  color: #1A1A1A;
+  outline: 3px solid #F39C12;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
+.contenedor { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+
+/* ============================================
+   INDEX — Grid de Secciones Principales
+   ============================================ */
+.bienvenida { text-align: center; margin-bottom: 48px; }
+.bienvenida h2 { font-size: 1.8rem; color: var(--color-primario); margin-bottom: 12px; }
+.bienvenida p  { font-size: 1.1rem; color: #444; max-width: 680px; margin: 0 auto; }
+
+.grid-secciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 26px;
+  margin-top: 16px;
+}
+
+.tarjeta-seccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: var(--radio);
+  padding: 38px 24px;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: var(--sombra);
+  transition: transform 0.15s, box-shadow 0.15s;
+  min-height: 190px;
+  gap: 12px;
+}
+.tarjeta-seccion:hover, .tarjeta-seccion:focus {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.22);
+  outline: 5px solid var(--color-acento);
+  outline-offset: 3px;
+}
+.tarjeta-seccion .icono        { font-size: 3rem; display: block; }
+.tarjeta-seccion .titulo-seccion { font-size: 1.3rem; letter-spacing: 1px; }
+.tarjeta-seccion .desc-seccion  { font-size: 0.82rem; font-weight: 400; opacity: 0.92; margin-top: 4px; }
+
+.tarjeta-salud      { background-color: var(--color-salud); }
+.tarjeta-salud:hover { background-color: var(--color-salud-hover); }
+.tarjeta-ocio       { background-color: var(--color-ocio); }
+.tarjeta-ocio:hover  { background-color: var(--color-ocio-hover); }
+.tarjeta-servicios  { background-color: var(--color-servicios); }
+.tarjeta-servicios:hover { background-color: var(--color-servicios-hover); }
+.tarjeta-movilidad  { background-color: var(--color-movilidad); }
+.tarjeta-movilidad:hover { background-color: var(--color-movilidad-hover); }
+.tarjeta-tramites   { background-color: var(--color-tramites); }
+.tarjeta-tramites:hover  { background-color: var(--color-tramites-hover); }
+
+/* ============================================
+   PÁGINAS SECUNDARIAS — Estructura general
+   ============================================ */
+.barra-navegacion {
+  background-color: #EAF0FB;
+  border-bottom: 3px solid var(--color-borde);
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--color-volver);
+  color: white;
+  text-decoration: none;
+  border-radius: 14px;
+  padding: 16px 36px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn-volver:hover, .btn-volver:focus {
+  background-color: var(--color-volver-hover);
+  transform: scale(1.03);
+  outline: 4px solid var(--color-acento);
+  outline-offset: 3px;
+}
+.btn-volver .flecha { font-size: 1.4rem; }
+
+.titulo-pagina   { font-size: 1.9rem; font-weight: 700; color: var(--color-primario); margin-bottom: 8px; margin-top: 36px; }
+.subtitulo-pagina { font-size: 1rem; color: #555; margin-bottom: 28px; }
+.separador       { border: none; border-top: 3px solid var(--color-borde); margin: 44px 0; }
+
+/* ============================================
+   SELECTOR DE SUB-OPCIONES
+   Cuadrícula de botones para elegir EPS/Servicio/etc.
+   ============================================ */
+.instruccion-selector {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+  padding: 14px 20px;
+  background: white;
+  border-radius: 12px;
+  border-left: 5px solid var(--color-acento);
+  box-shadow: var(--sombra);
+}
+
+.grid-opciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 44px;
+}
+
+/* Cada botón de opción (EPS, servicio, etc.) */
+.btn-opcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: white;
+  border: 3px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 22px 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-texto);
+  cursor: pointer;
+  text-align: center;
+  box-shadow: var(--sombra);
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  min-height: 120px;
+}
+.btn-opcion .icono-opcion { font-size: 2.2rem; }
+.btn-opcion .nombre-opcion { font-size: 0.95rem; line-height: 1.3; }
+.btn-opcion .tarea-opcion  { font-size: 0.75rem; font-weight: 400; color: #666; margin-top: 3px; line-height: 1.3; }
+
+/* Colores de hover y activo según sección */
+.seccion-salud .btn-opcion:hover,
+.seccion-salud .btn-opcion.activo     { border-color: var(--color-salud); background-color: #EAF5ED; transform: scale(1.03); }
+.seccion-servicios .btn-opcion:hover,
+.seccion-servicios .btn-opcion.activo { border-color: var(--color-servicios); background-color: #F5EEF8; transform: scale(1.03); }
+.seccion-movilidad .btn-opcion:hover,
+.seccion-movilidad .btn-opcion.activo { border-color: var(--color-movilidad); background-color: #EAF0FB; transform: scale(1.03); }
+.seccion-tramites .btn-opcion:hover,
+.seccion-tramites .btn-opcion.activo  { border-color: var(--color-tramites); background-color: #FDEDEC; transform: scale(1.03); }
+.seccion-ocio .btn-opcion:hover,
+.seccion-ocio .btn-opcion.activo      { border-color: var(--color-ocio); background-color: #FDF0E8; transform: scale(1.03); }
+
+.btn-opcion.activo {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   PANEL DE CONTENIDO DE CADA SUB-OPCIÓN
+   Oculto/visible según selección del usuario
+   ============================================ */
+.panel-contenido { display: none; }
+
+.panel-contenido.visible {
+  display: block;
+  animation: aparecer 0.35s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Encabezado del panel cuando se selecciona una opción */
+.panel-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: white;
+  border-radius: var(--radio);
+  padding: 22px 30px;
+  margin-bottom: 32px;
+  box-shadow: var(--sombra);
+  border-left: 8px solid var(--color-acento);
+}
+.panel-encabezado .panel-icono { font-size: 2.6rem; }
+.panel-encabezado h3 { font-size: 1.35rem; color: var(--color-primario); margin-bottom: 3px; }
+.panel-encabezado .panel-subtitulo { font-size: 0.88rem; color: #666; }
+
+/* ============================================
+   BLOQUES DE CONSEJOS: ANTES y DESPUÉS
+   ============================================ */
+
+/* Bloque "Antes de comenzar" — verde */
+.aviso-antes {
+  background-color: #EAF5ED;
+  border-left: 6px solid var(--color-salud);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin: 0 0 32px 0;
+  font-size: 0.95rem;
+}
+.aviso-antes strong { display: block; color: var(--color-salud); font-size: 1rem; margin-bottom: 10px; }
+.aviso-antes ul { list-style: none; display: flex; flex-direction: column; gap: 8px; padding-left: 4px; }
+.aviso-antes ul li::before { content: "✅ "; }
+
+/* Bloque "Después de terminar" — azul */
+.aviso-despues {
+  background-color: #EAF0FB;
+  border-left: 6px solid var(--color-primario);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin: 32px 0 0 0;
+  font-size: 0.95rem;
+}
+.aviso-despues strong { display: block; color: var(--color-primario); font-size: 1rem; margin-bottom: 10px; }
+.aviso-despues ul { list-style: none; display: flex; flex-direction: column; gap: 8px; padding-left: 4px; }
+.aviso-despues ul li::before { content: "📌 "; }
+
+/* Bloque general de consejo/aviso — amarillo */
+.aviso-consejo {
+  background-color: #FEF9E7;
+  border-left: 6px solid var(--color-acento);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-size: 0.95rem;
+}
+.aviso-consejo strong { display: block; color: #7D6608; margin-bottom: 6px; font-size: 1rem; }
+
+/* ============================================
+   TUTORIAL DE PASOS
+   ============================================ */
+.seccion-tutorial {
+  background: white;
+  border-radius: var(--radio);
+  padding: 36px;
+  box-shadow: var(--sombra);
+  margin-bottom: 40px;
+}
+.seccion-tutorial h4 {
+  font-size: 1.2rem;
+  color: var(--color-primario);
+  margin-bottom: 22px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--color-borde);
+}
+
+.lista-pasos {
+  list-style: none;
+  counter-reset: pasos;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.lista-pasos li {
+  counter-increment: pasos;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.lista-pasos li::before {
+  content: counter(pasos);
+  background-color: var(--color-primario);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.lista-pasos.salud li::before     { background-color: var(--color-salud); }
+.lista-pasos.ocio li::before      { background-color: var(--color-ocio); }
+.lista-pasos.servicios li::before { background-color: var(--color-servicios); }
+.lista-pasos.movilidad li::before { background-color: var(--color-movilidad); }
+.lista-pasos.tramites li::before  { background-color: var(--color-tramites); }
+.lista-pasos li strong { display: block; font-size: 1.05rem; margin-bottom: 3px; }
+
+/* ============================================
+   CONTENEDOR DE VIDEO (iFrame YouTube)
+   ============================================ */
+.seccion-video { margin-bottom: 36px; }
+.seccion-video h4 { font-size: 1.2rem; color: var(--color-primario); margin-bottom: 10px; }
+.video-descripcion { font-size: 0.92rem; color: #555; margin-bottom: 14px; }
+
+.video-contenedor {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  border: 4px solid var(--color-borde);
+}
+.video-contenedor iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+/* ============================================
+   CONTENEDOR DE INFOGRAFÍA
+   ============================================ */
+.seccion-infografia { margin-bottom: 36px; }
+.seccion-infografia h4 { font-size: 1.2rem; color: var(--color-primario); margin-bottom: 12px; }
+
+.contenedor-infografia {
+  border: 4px solid var(--color-borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  background: white;
+  padding: 18px;
+  text-align: center;
+}
+.contenedor-infografia img { max-width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto; }
+.infografia-pie { font-size: 0.82rem; color: #666; margin-top: 10px; font-style: italic; }
+
+/* Placeholder cuando no hay imagen */
+.imagen-placeholder {
+  background: linear-gradient(135deg, #EAF0FB 0%, #D6EAF8 100%);
+  border-radius: 10px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primario);
+  font-size: 0.95rem;
+  gap: 10px;
+  padding: 28px;
+}
+.imagen-placeholder .icono-placeholder { font-size: 3.2rem; }
+
+/* ============================================
+   PIE DE PÁGINA
+   ============================================ */
+.pie-pagina {
+  background-color: var(--color-primario);
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 28px 24px;
+  font-size: 0.85rem;
+  margin-top: 60px;
+}
+.pie-pagina strong { color: white; font-size: 1rem; }
+
+/* Botón volver al final centrado */
+.bloque-volver-final { text-align: center; margin: 44px 0 28px; }
+.btn-volver-final {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--color-volver);
+  color: white;
+  text-decoration: none;
+  border-radius: 14px;
+  padding: 20px 48px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+  transition: background 0.2s, transform 0.1s;
+}
+.btn-volver-final:hover, .btn-volver-final:focus {
+  background-color: var(--color-volver-hover);
+  transform: scale(1.03);
+  outline: 4px solid var(--color-acento);
+  outline-offset: 3px;
+}
+
+/* ============================================
+   RESPONSIVIDAD MÓVIL
+   ============================================ */
+@media (max-width: 680px) {
+  :root { --fuente-base: 19px; }
+  .cabecera { padding: 18px 16px; flex-direction: column; align-items: flex-start; }
+  .grid-secciones, .grid-opciones { grid-template-columns: 1fr; gap: 14px; }
+  .tarjeta-seccion { min-height: 150px; padding: 28px 18px; }
+  .contenedor { padding: 22px 12px; }
+  .seccion-tutorial { padding: 22px 14px; }
+  .barra-navegacion { padding: 14px 14px; }
+  .panel-encabezado { padding: 16px 18px; flex-direction: column; text-align: center; }
+}
+
+/* ============================================
+   BLOQUE DE VIDEO — Miniatura clicable
+   Reemplaza el iframe que falla en local
+   ============================================ */
+.video-link-bloque {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #1a1a1a;
+  border-radius: var(--radio);
+  padding: 24px 28px;
+  text-decoration: none;
+  color: white;
+  box-shadow: var(--sombra);
+  border: 4px solid #333;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 12px;
+}
+.video-link-bloque:hover, .video-link-bloque:focus {
+  background: #c00;
+  transform: scale(1.02);
+  outline: 4px solid var(--color-acento);
+  outline-offset: 3px;
+}
+.video-link-bloque .play-icono {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+.video-link-bloque .play-texto strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+.video-link-bloque .play-texto span {
+  font-size: 0.82rem;
+  opacity: 0.75;
+}

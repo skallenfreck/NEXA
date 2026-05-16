@@ -1,0 +1,33 @@
+NEXA — Guía de uso y edición
+==============================
+Versión 2.0 | Fundación Universitaria Konrad Lorenz | 2026
+
+ARCHIVOS DEL PROYECTO:
+  index.html      → Menú principal (5 secciones)
+  salud.html      → 5 EPS con tutoriales
+  ocio.html       → 4 plataformas de entretenimiento
+  servicios.html  → 4 servicios públicos
+  movilidad.html  → 4 tutoriales de transporte
+  tramites.html   → 4 trámites legales
+  styles.css      → Estilos visuales unificados
+  imagenes/       → Carpeta para sus infografías
+
+CÓMO ABRIR:
+  Haga doble clic en index.html → se abre en el navegador.
+  Solo necesita internet para cargar los videos de YouTube.
+
+CÓMO CAMBIAR UN VIDEO:
+  1. Vaya a YouTube y abra el video deseado
+  2. Copie el código de la URL: youtube.com/watch?v=CODIGO
+  3. En el HTML busque: src="https://www.youtube.com/embed/CODIGO_VIDEO_XXX"
+  4. Reemplace CODIGO_VIDEO_XXX por el código real del video
+
+CÓMO AGREGAR UNA IMAGEN:
+  1. Guarde la imagen en la carpeta imagenes/ con el nombre correcto
+  2. En el HTML, reemplace el bloque <div class="imagen-placeholder">
+     por: <img src="imagenes/NOMBRE.png" alt="Descripción de la imagen" />
+
+CÓMO EDITAR LOS PASOS:
+  Cada paso está dentro de una etiqueta <li>. Busque el texto
+  entre <strong> (título del paso) y edítelo directamente.
+  Los comentarios <!-- --> en el código le indican qué es cada parte.

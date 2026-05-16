@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXA — Movilidad</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <header class="cabecera">
+    <div class="cabecera-logo">
+      <div>
+        <h1>🔗 NEXA</h1>
+        <p class="slogan">Donde las ideas se conectan con el futuro.</p>
+      </div>
+    </div>
+    <div class="controles-accesibilidad">
+      <span style="color:white;font-size:0.85rem;font-weight:600;">Tamaño de letra:</span>
+      <button class="btn-tamanio" onclick="cambiarTamanio(-1)">A−</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(0)">A</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(1)">A+</button>
+    </div>
+    <div class="indicador-posicion">📍 Usted está en: Movilidad</div>
+  </header>
+
+  <nav class="barra-navegacion">
+    <a href="index.html" class="btn-volver"><span class="flecha">⬅</span> VOLVER AL INICIO</a>
+    <span style="font-size:0.9rem;color:#444;">Sección: <strong>Movilidad y Transporte</strong></span>
+  </nav>
+
+  <main class="contenedor seccion-movilidad">
+
+    <h2 class="titulo-pagina">🚌 Movilidad</h2>
+    <p class="subtitulo-pagina">Aprenda a usar su tarjeta Tullave, consultar rutas de bus y pedir un viaje seguro.
+      Seleccione el tema que necesita.</p>
+
+    <!-- ============================================================
+         CUADRÍCULA DE OPCIONES DE MOVILIDAD
+         ============================================================ -->
+    <p class="instruccion-selector">👇 Toque el tema que le interesa aprender:</p>
+
+    <div class="grid-opciones">
+
+      <!--
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-tullave-web', this)">
+        <span class="icono-opcion">💳</span>
+        <span class="nombre-opcion">Tarjeta Tullave</span>
+        <span class="tarea-opcion">Personalización por la página web</span>
+      </button>
+      -->
+
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-tullave-app', this)">
+        <span class="icono-opcion">📲</span>
+        <span class="nombre-opcion">Recarga Tullave</span>
+        <span class="tarea-opcion">Con la aplicación MaaS</span>
+      </button>
+
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-transmiapp', this)">
+        <span class="icono-opcion">🚌</span>
+        <span class="nombre-opcion">Dónde viene mi bus</span>
+        <span class="tarea-opcion">App TransMiApp</span>
+      </button>
+
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-uber', this)">
+        <span class="icono-opcion">🚗</span>
+        <span class="nombre-opcion">Uber</span>
+        <span class="tarea-opcion">Pedir un viaje seguro</span>
+      </button>
+
+    </div>
+
+
+    <!-- ========================
+         PANEL 1 — TULLAVE WEB
+         Tarea: Personalización web de la tarjeta
+         ======================== -->
+    <div id="panel-tullave-web" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">💳</span>
+        <div>
+          <h3>Tarjeta Tullave — Personalización Web</h3>
+          <p class="panel-subtitulo">Tarea: Registrar y personalizar su tarjeta Tullave en la página web</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su tarjeta Tullave física en la mano (necesita el número que está al respaldo)</li>
+          <li>Su número de cédula de ciudadanía</li>
+          <li>Un correo electrónico activo al que tenga acceso</li>
+          <li>Una contraseña nueva que quiera usar para su cuenta Tullave (anótela en un papel)</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_TULLAVE_WEB por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Registrar la tarjeta Tullave en la web</h4>
+        <p class="video-descripcion">Si personaliza su tarjeta, si la pierde podrá recuperar el saldo. ¡Vale la pena
+          hacerlo!</p>
+        <a href="https://www.youtube.com/watch?v=CODIGO_VIDEO_TULLAVE_WEB" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-tullave-web.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Beneficios de personalizar su tarjeta Tullave</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <span class="icono-placeholder">💳</span>
+            <p><strong>Aquí va la infografía de Tullave Web</strong></p>
+            <p style="font-size:0.8rem;color:#555;">Guárdela como: <code>imagenes/infografia-tullave-web.png</code></p>
+          </div>
+          <p class="infografia-pie">Infografía: Personalización Tullave — Portal Web</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para personalizar su tarjeta Tullave en la página web</h4>
+        <ol class="lista-pasos movilidad">
+          <li>
+            <div>
+              <strong>Abra el navegador y vaya a tullave.gov.co.</strong>
+              Escriba la dirección en la barra de arriba y presione Enter.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Busque el botón "Regístrese" o "Crear cuenta".</strong>
+              Está en la parte superior de la página. Haga clic en esa opción.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Complete el formulario con sus datos personales.</strong>
+              Ingrese su nombre completo, número de cédula, correo electrónico y una contraseña.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese el número de su tarjeta Tullave.</strong>
+              Está al respaldo de la tarjeta, generalmente en la parte inferior. Escríbalo sin espacios.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Verifique su correo electrónico para activar la cuenta.</strong>
+              Recibirá un mensaje de Tullave. Ábralo y haga clic en el enlace de activación.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese a su cuenta con su correo y contraseña.</strong>
+              Ahora podrá ver el saldo de su tarjeta y el historial de viajes.
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>Anote en un papel su correo y contraseña de Tullave y guárdelo en un lugar seguro</li>
+            <li>Si pierde su tarjeta, ingrese al portal y bloquéela para proteger su saldo</li>
+            <li>Para ayuda, llame a la línea de Transmilenio: 601 429 1000</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-tullave-web -->
+
+
+    <!-- ========================
+         PANEL 2 — RECARGA TULLAVE APP MAAS
+         Tarea: Recargar la tarjeta con la app
+         ======================== -->
+    <div id="panel-tullave-app" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">📲</span>
+        <div>
+          <h3>Recarga Tullave con la App MaaS</h3>
+          <p class="panel-subtitulo">Tarea: Recargar su tarjeta Tullave desde su celular con la aplicación MaaS</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>La aplicación "MaaS Bogotá" instalada en su celular (búsquela gratis en la tienda de aplicaciones)</li>
+          <li>Su tarjeta Tullave personalizada (debe estar registrada en el portal web primero)</li>
+          <li>Los datos de su tarjeta débito o crédito para pagar la recarga</li>
+          <li>Saber cuánto dinero quiere recargar (mínimo consultar antes el saldo actual)</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_MAAS por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Recargar Tullave con la app MaaS</h4>
+        <p class="video-descripcion">Le mostramos cómo recargar su tarjeta sin salir de casa, de forma rápida y segura.
+        </p>
+        <a href="https://youtu.be/P2kPEEUyJ04?si=r1vDSo9xJo564v3t" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-maas.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Cómo funciona la recarga virtual Tullave parte 1</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-maas1.png" alt="Infografía recarga virtual Tullave 1"
+              class="imagen-infografia" />
+            <p class="infografia-pie">Infografía: Recarga Tullave con App MaaS</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Cómo funciona la recarga virtual Tullave parte 2</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-maas2.png" alt="Infografía recarga virtual Tullave 2"
+              class="imagen-infografia" />
+            <p class="infografia-pie">Infografía: Recarga Tullave con App MaaS</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para recargar su Tullave con la app MaaS</h4>
+        <ol class="lista-pasos movilidad">
+          <li>
+            <div>
+              <strong>Abra la aplicación "MaaS Bogotá" en su celular.</strong>
+              Búsquela entre sus aplicaciones. Si no la tiene, descárguela gratis desde Play Store (Android) o App Store
+              (iPhone).
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese con su correo y contraseña de Tullave.</strong>
+              Son los mismos datos que usó para registrar su tarjeta en la página web.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Seleccione la opción "Recargar tarjeta" o "Añadir saldo".</strong>
+              Está en el menú principal de la aplicación.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese el valor que desea recargar.</strong>
+              Escriba el monto (por ejemplo: $20.000) y toque "Continuar".
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Seleccione la forma de pago.</strong>
+              Puede pagar con tarjeta débito o crédito. Ingrese los datos de su tarjeta.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Confirme el pago y espere la confirmación.</strong>
+              El saldo se verá reflejado en su tarjeta Tullave la próxima vez que pase por el torniquete del bus.
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>Tome captura de pantalla del comprobante de recarga</li>
+            <li>El saldo puede tardar unos minutos en aparecer en su tarjeta física</li>
+            <li>Si el saldo no se refleja después de 24 horas, llame a Transmilenio: 601 429 1000</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-tullave-app -->
+
+
+    <!-- ========================
+         PANEL 3 — TRANSMIAPP
+         Tarea: Consultar dónde viene el bus
+         ======================== -->
+    <div id="panel-transmiapp" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">🚌</span>
+        <div>
+          <h3>Dónde Viene Mi Bus — TransMiApp</h3>
+          <p class="panel-subtitulo">Tarea: Consultar en tiempo real cuándo llegará su bus</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>La aplicación "TransMiApp" instalada en su celular (es gratis en la tienda de apps)</li>
+          <li>Activar la ubicación (GPS) de su celular para que la app sepa dónde está usted</li>
+          <li>Saber el nombre o número de la ruta de bus que necesita</li>
+          <li>Conexión a internet (WiFi o datos del celular)</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_TRANSMIAPP por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Cómo usar TransMiApp para saber dónde viene el bus</h4>
+        <p class="video-descripcion">Ya no tiene que esperar parado sin saber cuándo llega el bus. ¡La app se lo dice!
+        </p>
+        <a href="https://youtu.be/_s0YDXeU0jc?si=GN_ndVFOHzrmgCRL" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-transmiapp.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Cómo leer la pantalla de TransMiApp</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-transmiapp.png" alt="Infografía recarga virtual Tullave 1"
+              class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Pantalla de TransMiApp explicada</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para consultar dónde viene su bus en TransMiApp</h4>
+        <ol class="lista-pasos movilidad">
+          <li>
+            <div>
+              <strong>Abra la aplicación TransMiApp en su celular.</strong>
+              Búsquela entre sus apps. Tiene el ícono de un bus rojo. Si no la tiene, descárguela gratis.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Permita que la app acceda a su ubicación cuando se lo pida.</strong>
+              Toque "Permitir" para que la app sepa en qué parada o calle está usted.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>En el mapa que aparece, verá las paradas cercanas marcadas.</strong>
+              Toque la parada donde usted está esperando el bus.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Verá la lista de rutas que pasan por esa parada.</strong>
+              Busque el número o nombre de la ruta que necesita y tóquela.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>La app le mostrará en cuántos minutos llega el próximo bus.</strong>
+              Por ejemplo: "Bus en 4 minutos" o "2 buses próximos". Así sabe si puede esperar o caminar.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>También puede buscar rutas si no sabe cuál tomar.</strong>
+              Toque el ícono de lupa 🔍 y escriba su destino. La app le sugerirá las rutas posibles.
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>La app funciona mejor con WiFi o con datos del celular activados</li>
+            <li>Los tiempos de llegada son aproximados y pueden variar por el tráfico</li>
+            <li>También puede llamar a la línea de Transmilenio para consultar rutas: 601 429 1000</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-transmiapp -->
+
+
+    <!-- ========================
+         PANEL 4 — UBER
+         Tarea: Pedir un viaje seguro
+         ======================== -->
+    <div id="panel-uber" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">🚗</span>
+        <div>
+          <h3>Uber</h3>
+          <p class="panel-subtitulo">Tarea: Pedir un viaje seguro desde su celular</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>La aplicación "Uber" instalada en su celular (gratis en la tienda de apps)</li>
+          <li>Una cuenta de Uber creada con su correo electrónico y número de celular</li>
+          <li>Su tarjeta débito o crédito registrada en la app para pagar (o pague en efectivo)</li>
+          <li>Saber la dirección exacta a donde quiere ir</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_UBER por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Cómo pedir un Uber de forma segura</h4>
+        <p class="video-descripcion">Le enseñamos a pedir el carro, verificar que sea el correcto y pagar sin
+          complicaciones.</p>
+        <a href="https://youtu.be/ap5Khivqs04?si=BoUmBf3sjL8YuaQQ" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-uber.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Cómo verificar que el carro sea el correcto</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-uber.png" alt="Infografía recarga virtual Tullave 2"
+            class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Seguridad al usar Uber</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para pedir un viaje seguro con Uber</h4>
+        <ol class="lista-pasos movilidad">
+          <li>
+            <div>
+              <strong>Abra la aplicación Uber en su celular.</strong>
+              Toque el ícono negro con una U. Ingrese con su correo y contraseña si se lo pide.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>En el espacio "¿A dónde vas?", escriba su destino.</strong>
+              Escriba la dirección completa o el nombre del lugar (ej: "Clínica Marly, Bogotá"). Selecciónelo de la
+              lista.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Elija el tipo de viaje según su presupuesto.</strong>
+              Verá opciones como "UberX" (económico) o "Comfort" (más amplio). Toque la que prefiera y luego
+              "Confirmar".
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Espere mientras el sistema encuentra un conductor cercano.</strong>
+              Verá en el mapa cómo el carro se acerca. La app le dice el nombre del conductor y el tiempo de llegada.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Cuando llegue el carro, verifique que sea el correcto ANTES de subir.</strong>
+              Revise: la placa del carro (igual a la que muestra la app), el nombre del conductor y la foto.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Al llegar a su destino, revise el cobro y pague según el método configurado.</strong>
+              Si configuró tarjeta, el cobro es automático. Si eligió efectivo, pague el monto exacto que muestra la
+              app.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Califique el viaje tocando las estrellas al final.</strong>
+              Esto ayuda a mantener la calidad del servicio. Puede hacerlo o saltarlo.
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>Nunca suba a un carro cuya placa no coincida con la que muestra la aplicación</li>
+            <li>Comparta su viaje con un familiar: en la app hay una opción "Compartir viaje" que envía su ruta en
+              tiempo real</li>
+            <li>Si tiene algún problema durante el viaje, llame al 123 (emergencias) o al número de un familiar</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-uber -->
+
+  </main>
+
+  <div class="bloque-volver-final">
+    <a href="index.html" class="btn-volver-final"><span>⬅</span> VOLVER AL INICIO</a>
+  </div>
+
+  <footer class="pie-pagina">
+    <strong>NEXA</strong> — Proyecto de Inclusión Digital para Adultos Mayores<br />
+    Fundación Universitaria Konrad Lorenz · Bogotá, Colombia · 2026
+  </footer>
+
+  <script>
+    let tamanioActual = 22;
+    const TAMANIO_MIN = 18, TAMANIO_MAX = 34;
+    function cambiarTamanio(d) {
+      tamanioActual = d === 0 ? 22 : Math.min(TAMANIO_MAX, Math.max(TAMANIO_MIN, tamanioActual + d * 2));
+      document.documentElement.style.fontSize = tamanioActual + 'px';
+      localStorage.setItem('nexa-tamanio-fuente', tamanioActual);
+    }
+    function seleccionarOpcion(idPanel, btn) {
+      document.querySelectorAll('.panel-contenido').forEach(p => p.classList.remove('visible'));
+      document.querySelectorAll('.btn-opcion').forEach(b => b.classList.remove('activo'));
+      document.getElementById(idPanel).classList.add('visible');
+      btn.classList.add('activo');
+      document.getElementById(idPanel).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    window.addEventListener('DOMContentLoaded', function () {
+      const g = localStorage.getItem('nexa-tamanio-fuente');
+      if (g) { tamanioActual = parseInt(g); document.documentElement.style.fontSize = tamanioActual + 'px'; }
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+CARPETA DE IMÁGENES — NEXA
+===========================
+Guarde aquí sus infografías con los siguientes nombres exactos:
+
+SALUD:
+  infografia-capital-salud.png
+  infografia-sanitas.png
+  infografia-compensar.png
+  infografia-saludtotal.png
+  infografia-sura.png
+
+SERVICIOS PÚBLICOS:
+  infografia-acueducto.png
+  infografia-enel.png
+  infografia-vanti.png
+  infografia-etb.png
+
+MOVILIDAD:
+  infografia-tullave-web.png
+  infografia-maas.png
+  infografia-transmiapp.png
+  infografia-uber.png
+
+TRÁMITES LEGALES:
+  infografia-registraduria.png
+  infografia-antecedentes.png
+  infografia-denuncia.png
+  infografia-ramajudicial.png
+
+OCIO:
+  infografia-youtube.png
+  infografia-netflix.png
+  infografia-spotify.png
+  infografia-membresias.png
+
+Una vez guardada la imagen, en el archivo HTML correspondiente
+reemplace el bloque <div class="imagen-placeholder">...</div>
+por: <img src="imagenes/NOMBRE_DEL_ARCHIVO.png" alt="Descripción" />

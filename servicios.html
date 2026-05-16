@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXA — Servicios Públicos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <header class="cabecera">
+    <div class="cabecera-logo">
+      <div>
+        <h1>🔗 NEXA</h1>
+        <p class="slogan">Donde las ideas se conectan con el futuro.</p>
+      </div>
+    </div>
+    <div class="controles-accesibilidad">
+      <span style="color:white;font-size:0.85rem;font-weight:600;">Tamaño de letra:</span>
+      <button class="btn-tamanio" onclick="cambiarTamanio(-1)">A−</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(0)">A</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(1)">A+</button>
+    </div>
+    <div class="indicador-posicion">📍 Usted está en: Servicios Públicos</div>
+  </header>
+
+  <nav class="barra-navegacion">
+    <a href="index.html" class="btn-volver"><span class="flecha">⬅</span> VOLVER AL INICIO</a>
+    <span style="font-size:0.9rem;color:#444;">Sección: <strong>Servicios Públicos</strong></span>
+  </nav>
+
+  <main class="contenedor seccion-servicios">
+
+    <h2 class="titulo-pagina">🏛️ Servicios Públicos</h2>
+    <p class="subtitulo-pagina">Seleccione el servicio que necesita pagar o consultar. Le explicamos cómo hacerlo sin
+      salir de casa.</p>
+
+    <!-- ============================================================
+         CUADRÍCULA DE SERVICIOS PÚBLICOS — El usuario elige aquí
+         Para agregar un servicio: copie un btn-opcion y cambie
+         el id del panel y los datos correspondientes
+         ============================================================ -->
+    <p class="instruccion-selector">👇 Toque el servicio que necesita:</p>
+
+    <div class="grid-opciones">
+
+      <!-- Botón: Acueducto EAAB -->
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-acueducto', this)">
+        <span class="icono-opcion">💧</span>
+        <span class="nombre-opcion">Acueducto de Bogotá EAAB</span>
+        <span class="tarea-opcion">Pagar factura por PSE</span>
+      </button>
+
+      <!-- Botón: Enel Colombia -->
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-enel', this)">
+        <span class="icono-opcion">⚡</span>
+        <span class="nombre-opcion">Enel Colombia</span>
+        <span class="tarea-opcion">Descargar duplicado de factura</span>
+      </button>
+
+      <!-- Botón: Vanti -->
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-vanti', this)">
+        <span class="icono-opcion">🔥</span>
+        <span class="nombre-opcion">Vanti (Gas)</span>
+        <span class="tarea-opcion">Consultar fecha de revisión periódica</span>
+      </button>
+
+      <!-- Botón: ETB -->
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-etb', this)">
+        <span class="icono-opcion">📱</span>
+        <span class="nombre-opcion">ETB</span>
+        <span class="tarea-opcion">Pagar factura por WhatsApp</span>
+      </button>
+
+    </div>
+
+
+    <!-- ========================
+         PANEL 1 — ACUEDUCTO EAAB
+         Tarea: Pagar factura por PSE
+         ======================== -->
+    <div id="panel-acueducto" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">💧</span>
+        <div>
+          <h3>Acueducto de Bogotá — EAAB</h3>
+          <p class="panel-subtitulo">Tarea: Pagar su factura del agua por PSE (débito bancario)</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su factura del agua en papel (necesita el número de referencia de pago)</li>
+          <li>Los datos de su cuenta bancaria: banco, número de cuenta y tipo (ahorros o corriente)</li>
+          <li>La clave de su banco para autorizar el débito</li>
+          <li>Conexión a internet estable</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_ACUEDUCTO por el ID real del video de YouTube -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Pagar factura del Acueducto por PSE</h4>
+        <p class="video-descripcion">Vea primero el video y luego siga los pasos de abajo.</p>
+        <a href="https://www.youtube.com/watch?v=CODIGO_VIDEO_ACUEDUCTO" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-acueducto.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Cómo funciona el pago por PSE parte 1</h4>
+        <div class="contenedor-infografia">
+          <img src="imagenes/infografia-acueducto1.png" alt="Infografía recarga virtual Tullave 1"
+            class="imagen-infografia" />
+          <p class="infografia-pie">Infografía: Pago PSE — Acueducto de Bogotá EAAB</p>
+        </div>
+      </div>
+
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Cómo funciona el pago por PSE parte 2</h4>
+        <div class="contenedor-infografia">
+          <img src="imagenes/infografia-acueducto2.png" alt="Infografía recarga virtual Tullave 2"
+            class="imagen-infografia" />
+          <p class="infografia-pie">Infografía: Pago PSE — Acueducto de Bogotá EAAB</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para pagar la factura del agua por internet</h4>
+        <ol class="lista-pasos servicios">
+          <li>
+            <div>
+              <strong>Abra el navegador y vaya a la página del Acueducto.</strong>
+              Escriba
+              <a href="https://www.acueducto.com.co" target="_blank">
+                <em>acueducto.com.co</em>
+              </a>
+              en la barra de arriba y presione Enter.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Busque el botón "Pagos en línea" o "Pagar factura".</strong>
+              Está en el menú principal de la página, generalmente en la parte superior o central.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese el número de referencia de pago de su factura.</strong>
+              Ese número está impreso en su factura física. Escríbalo sin espacios.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Verifique el valor que aparece en pantalla.</strong>
+              Compare el monto con el que aparece en su factura. Deben ser iguales.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Seleccione la opción de pago "PSE".</strong>
+              PSE es un sistema seguro que debita el dinero directamente de su cuenta bancaria.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Elija su banco de la lista y presione "Continuar".</strong>
+              El sistema lo llevará a la página oficial de su banco.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese su clave bancaria y autorice el pago.</strong>
+              Siga las instrucciones de su banco. Cuando termine, verá un comprobante de pago.
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, haga esto:</strong>
+          <ul>
+            <li>Tome una foto del comprobante de pago que aparece en pantalla</li>
+            <li>Anote el número de transacción PSE como respaldo</li>
+            <li>Si el pago no se completó, llame al Acueducto: 116 (gratis desde cualquier celular)</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-acueducto -->
+
+
+    <!-- ========================
+         PANEL 2 — ENEL COLOMBIA
+         Tarea: Descargar duplicado de factura
+         ======================== -->
+    <div id="panel-enel" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">⚡</span>
+        <div>
+          <h3>Enel Colombia</h3>
+          <p class="panel-subtitulo">Tarea: Descargar el duplicado de su factura de energía si la perdió</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su número de contrato o de cuenta de Enel (está en facturas anteriores o en el medidor)</li>
+          <li>Su número de cédula de ciudadanía</li>
+          <li>Tener instalada la app "Enel Colombia" en su celular, o usar el computador</li>
+          <li>Un lugar tranquilo con buena iluminación para leer la pantalla</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_ENEL por el ID real del video de YouTube -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Descargar duplicado de factura Enel</h4>
+        <p class="video-descripcion">Si perdió su recibo, en este video le mostramos cómo descargarlo gratis.</p>
+        <a href="https://www.youtube.com/watch?v=CODIGO_VIDEO_ENEL" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-enel.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Dónde encontrar el duplicado de su factura parte 1</h4>
+        <div class="contenedor-infografia">
+          <img src="imagenes/infografia-enel.png" alt="Infografía duplicado de factura Enel 1"
+            class="imagen-infografia" />
+          <p class="infografia-pie">Infografía: Duplicado de factura — Enel Colombia</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para descargar el duplicado de su factura de energía</h4>
+        <ol class="lista-pasos servicios">
+          <li>
+            <div>
+              <strong>Abra el navegador y vaya a enelcolombia.com.</strong>
+              Escriba la dirección y presione Enter. También puede buscar "Enel Colombia" en Google.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Busque la opción "Mi cuenta" o "Duplicado de factura".</strong>
+              Está en el menú de la página o en un botón de acceso rápido.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese su número de contrato o número de cuenta.</strong>
+              Este dato aparece en facturas anteriores en la parte superior del recibo.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>El sistema mostrará su factura del mes actual o anteriores.</strong>
+              Seleccione el mes del que necesita el duplicado.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Presione el botón "Descargar" o "Ver factura" (ícono PDF 📄).</strong>
+              El archivo se descargará en su dispositivo automáticamente.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Abra el archivo descargado para verlo o imprimirlo.</strong>
+              En el celular aparecerá una notificación de descarga. En el computador búsquelo en "Descargas".
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, haga esto:</strong>
+          <ul>
+            <li>Guarde el PDF de la factura en la carpeta "Facturas servicios" de su celular</li>
+            <li>Si necesita pagar, use el código de barras que aparece en el duplicado en cualquier banco o corresponsal
+            </li>
+            <li>Si no puede descargarla, llame a Enel: 601 234 9020</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-enel -->
+
+
+    <!-- ========================
+         PANEL 3 — VANTI
+         Tarea: Consultar fecha de revisión periódica obligatoria
+         ======================== -->
+    <div id="panel-vanti" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">🔥</span>
+        <div>
+          <h3>Vanti (Gas Natural)</h3>
+          <p class="panel-subtitulo">Tarea: Consultar la fecha de su revisión periódica obligatoria de gas</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su número de contrato de Vanti (aparece en su factura del gas, en la parte superior)</li>
+          <li>Su dirección completa del inmueble tal como aparece en el contrato</li>
+          <li>Saber que la revisión es OBLIGATORIA por ley cada 5 años para su seguridad</li>
+          <li>Conexión a internet en su celular o computador</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_VANTI por el ID real del video de YouTube -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Consultar revisión periódica en Vanti</h4>
+        <p class="video-descripcion">Le explicamos cómo saber cuándo le toca la revisión obligatoria de gas.</p>
+        <a href="https://www.youtube.com/watch?v=CODIGO_VIDEO_VANTI" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-vanti.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: ¿Qué es la revisión periódica de gas?</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+               <img src="imagenes/infografia-vanti.png" alt="Infografia que muestra los requisitos y pasos de la revision periodica de gas de Vanti con un estilo de lista y texto informativo sobre seguridad y fechas de inspeccion" 
+            class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Revisión periódica obligatoria — Vanti Gas Natural</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para consultar su fecha de revisión periódica de gas</h4>
+        <ol class="lista-pasos servicios">
+          <li>
+            <div>
+              <strong>Abra el navegador y vaya a vanti.com.co.</strong>
+              Escriba la dirección en la barra del navegador y presione Enter.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Busque la opción "Revisión periódica" o "Mis servicios".</strong>
+              Puede estar en el menú principal o en una sección llamada "Atención al cliente".
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese su número de contrato de Vanti.</strong>
+              Este número está impreso en su factura del gas. Generalmente tiene 10 dígitos.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>El sistema mostrará la información de su revisión.</strong>
+              Verá si ya está vencida, cuándo fue la última y cuándo debe hacerse la próxima.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Si necesita agendar la revisión, busque el botón "Agendar visita".</strong>
+              Seleccione el día y la franja horaria que le quede bien (mañana o tarde).
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Confirme la cita y anote el número de radicado.</strong>
+              Recibirá un SMS o correo con la confirmación de la visita del técnico.
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, haga esto:</strong>
+          <ul>
+            <li>Anote en un papel la fecha y hora de la visita del técnico de Vanti</li>
+            <li>El día de la visita, asegúrese de que haya un adulto en casa para recibir al técnico</li>
+            <li>Si tiene dudas o quiere cancelar la cita, llame a Vanti: 164 (línea gratuita)</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-vanti -->
+
+
+    <!-- ========================
+         PANEL 4 — ETB
+         Tarea: Pagar factura por WhatsApp
+         ======================== -->
+    <div id="panel-etb" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">📱</span>
+        <div>
+          <h3>ETB</h3>
+          <p class="panel-subtitulo">Tarea: Pagar su factura de internet o teléfono por WhatsApp</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su celular con WhatsApp instalado y con conexión a internet</li>
+          <li>Su número de contrato o número de línea ETB (aparece en su factura)</li>
+          <li>Los datos de su tarjeta débito o crédito para pagar, o acceso a PSE</li>
+          <li>Su factura a la mano para verificar el valor a pagar</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_ETB por el ID real del video de YouTube -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Pagar factura ETB por WhatsApp</h4>
+        <p class="video-descripcion">¡Así de fácil! Pague su factura sin salir de WhatsApp.</p>
+        <a href="https://www.youtube.com/watch?v=CODIGO_VIDEO_ETB" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-etb.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Pasos del chatbot de ETB en WhatsApp</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <span class="icono-placeholder">📱</span>
+               <img src="imagenes/infografia-etb.png" alt="Infografía: Pasos del chatbot de ETB en WhatsApp"
+            class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Pago por WhatsApp — ETB</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para pagar su factura ETB por WhatsApp</h4>
+        <ol class="lista-pasos servicios">
+          <li>
+            <div>
+              <strong>Abra WhatsApp en su celular.</strong>
+              Toque el ícono verde de WhatsApp en su pantalla de inicio.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Busque el contacto oficial de ETB.</strong>
+              Toque el ícono de nuevo chat (lápiz o ícono de mensaje nuevo) y busque el número de ETB: <em>601 344
+                4000</em>. Agréguelo como contacto primero si es necesario.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Envíe un mensaje con la palabra "Hola" o "Pagar".</strong>
+              El chatbot de ETB le responderá automáticamente con un menú de opciones.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Seleccione la opción "Pagar factura" respondiendo con el número correspondiente.</strong>
+              El chatbot le guiará paso a paso. Solo debe responder con números o palabras simples.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese su número de contrato o línea ETB cuando se lo pida.</strong>
+              El sistema buscará su factura automáticamente y le mostrará el valor a pagar.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Confirme el valor y seleccione la forma de pago.</strong>
+              Puede pagar con tarjeta o PSE. El chatbot lo dirigirá a un enlace seguro de pago.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Complete el pago y guarde el comprobante.</strong>
+              ETB le enviará un mensaje de confirmación directamente a WhatsApp.
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, haga esto:</strong>
+          <ul>
+            <li>Tome una captura de pantalla del mensaje de confirmación de ETB en WhatsApp</li>
+            <li>Verifique en su estado de cuenta bancario que el débito se realizó correctamente</li>
+            <li>Si no recibió confirmación, llame a ETB: 601 344 4000</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-etb -->
+
+  </main>
+
+  <div class="bloque-volver-final">
+    <a href="index.html" class="btn-volver-final"><span>⬅</span> VOLVER AL INICIO</a>
+  </div>
+
+  <footer class="pie-pagina">
+    <strong>NEXA</strong> — Proyecto de Inclusión Digital para Adultos Mayores<br />
+    Fundación Universitaria Konrad Lorenz · Bogotá, Colombia · 2026
+  </footer>
+
+  <script>
+    let tamanioActual = 22;
+    const TAMANIO_MIN = 18, TAMANIO_MAX = 34;
+    function cambiarTamanio(d) {
+      tamanioActual = d === 0 ? 22 : Math.min(TAMANIO_MAX, Math.max(TAMANIO_MIN, tamanioActual + d * 2));
+      document.documentElement.style.fontSize = tamanioActual + 'px';
+      localStorage.setItem('nexa-tamanio-fuente', tamanioActual);
+    }
+    function seleccionarOpcion(idPanel, btn) {
+      document.querySelectorAll('.panel-contenido').forEach(p => p.classList.remove('visible'));
+      document.querySelectorAll('.btn-opcion').forEach(b => b.classList.remove('activo'));
+      document.getElementById(idPanel).classList.add('visible');
+      btn.classList.add('activo');
+      document.getElementById(idPanel).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    window.addEventListener('DOMContentLoaded', function () {
+      const g = localStorage.getItem('nexa-tamanio-fuente');
+      if (g) { tamanioActual = parseInt(g); document.documentElement.style.fontSize = tamanioActual + 'px'; }
+    });
+  </script>
+
+</body>
+
+</html>

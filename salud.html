@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXA — Salud</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== CABECERA ===== -->
+  <header class="cabecera">
+    <div class="cabecera-logo">
+      <div>
+        <h1>🔗 NEXA</h1>
+        <p class="slogan">Donde las ideas se conectan con el futuro.</p>
+      </div>
+    </div>
+    <div class="controles-accesibilidad">
+      <span style="color:white; font-size:0.85rem; font-weight:600;">Tamaño de letra:</span>
+      <button class="btn-tamanio" onclick="cambiarTamanio(-1)" aria-label="Reducir letra">A−</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(0)" aria-label="Tamaño normal">A</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(1)" aria-label="Aumentar letra">A+</button>
+    </div>
+    <div class="indicador-posicion" aria-current="page">📍 Usted está en: Salud</div>
+  </header>
+
+  <!-- ===== BOTÓN VOLVER — PARTE SUPERIOR ===== -->
+  <nav class="barra-navegacion" aria-label="Navegación secundaria">
+    <a href="index.html" class="btn-volver">
+      <span class="flecha" aria-hidden="true">⬅</span> VOLVER AL INICIO
+    </a>
+    <span style="font-size:0.9rem; color:#444;">Sección: <strong>Salud Digital</strong></span>
+  </nav>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main class="contenedor seccion-salud">
+
+    <h2 class="titulo-pagina">🏥 Salud</h2>
+    <p class="subtitulo-pagina">
+      Seleccione su EPS para aprender a agendar una cita médica por internet. Cada una tiene su propio proceso.
+    </p>
+
+    <!-- ============================================================
+         CUADRÍCULA DE EPS — El usuario elige su EPS aquí
+         Para agregar una EPS nueva: copie un btn-opcion y cambie
+         el id del panel y el ícono/nombre correspondiente
+         ============================================================ -->
+    <p class="instruccion-selector">👇 Toque su EPS para ver cómo agendar su cita:</p>
+
+    <div class="grid-opciones" role="tablist">
+
+      <!-- Botón EPS 1: Capital Salud -->
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-capital', this)" role="tab"
+        aria-controls="panel-capital">
+        <span class="icono-opcion">🏥</span>
+        <span class="nombre-opcion">Capital Salud</span>
+        <span class="tarea-opcion">Agendar cita médica</span>
+      </button>
+
+      <!-- Botón EPS 2: Sanitas -->
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-sanitas', this)" role="tab"
+        aria-controls="panel-sanitas">
+        <span class="icono-opcion">🩺</span>
+        <span class="nombre-opcion">Sanitas EPS</span>
+        <span class="tarea-opcion">Agendar cita médica</span>
+      </button>
+
+      <!-- Botón EPS 3: Compensar -->
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-compensar', this)" role="tab"
+        aria-controls="panel-compensar">
+        <span class="icono-opcion">🏨</span>
+        <span class="nombre-opcion">Compensar EPS</span>
+        <span class="tarea-opcion">Agendar cita médica</span>
+      </button>
+
+      <!-- Botón EPS 4: Salud Total -->
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-saludtotal', this)" role="tab"
+        aria-controls="panel-saludtotal">
+        <span class="icono-opcion">💊</span>
+        <span class="nombre-opcion">Salud Total</span>
+        <span class="tarea-opcion">Agendar cita médica</span>
+      </button>
+
+      <!-- Botón EPS 5: Sura -->
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-sura', this)" role="tab" aria-controls="panel-sura">
+        <span class="icono-opcion">🩻</span>
+        <span class="nombre-opcion">Sura EPS</span>
+        <span class="tarea-opcion">Agendar cita médica</span>
+      </button>
+
+    </div><!-- fin grid-opciones -->
+
+
+    <!-- ================================================================
+         PANELES DE CONTENIDO — Uno por cada EPS
+         Solo se muestra el que el usuario seleccionó
+         ================================================================ -->
+
+
+    <!-- ========================
+         PANEL 1 — CAPITAL SALUD
+         Tarea: Agendar cita médica
+         Portal: capitalsalud.gov.co
+         Proceso: Portal web ciudadano Bogotá
+         ======================== -->
+    <div id="panel-capital" class="panel-contenido" role="tabpanel">
+
+      <!-- Encabezado del panel -->
+      <div class="panel-encabezado">
+        <span class="panel-icono">🏥</span>
+        <div>
+          <h3>Capital Salud</h3>
+          <p class="panel-subtitulo">Agendar cita médica en capitalsalud.gov.co</p>
+        </div>
+      </div>
+
+      <!-- ANTES DE COMENZAR — liste aquí lo que el usuario debe tener listo -->
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su número de cédula de ciudadanía</li>
+          <li>Su fecha de nacimiento</li>
+          <li>Saber qué tipo de médico necesita: general o especialista</li>
+          <li>Conexión a internet activa en su celular o computador</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_CAPITAL_SALUD por el ID real del video de YouTube
+           Ejemplo: si el video es youtube.com/watch?v=ABC123, escriba ABC123 en el href -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Agendar cita en Capital Salud</h4>
+        <p class="video-descripcion">Vea primero el video y luego siga los pasos de abajo.</p>
+        <a href="https://youtu.be/ov6QgLlDaOQ?si=oQYKzLUeUd13Nbwi" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Cuando tenga la imagen, reemplace el bloque imagen-placeholder por:
+           <img src="imagenes/infografia-capital-salud.png" alt="Pasos para agendar cita Capital Salud" /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Resumen visual del proceso</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-capital-salud.png" alt="Infografía recarga virtual Tullave 1"
+            class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Agendar cita médica — Capital Salud</p>
+        </div>
+      </div>
+
+      <!-- PASOS — Edite el texto de cada <li> si el proceso cambia en el portal -->
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para agendar su cita en Capital Salud</h4>
+
+        <ol class="lista-pasos salud">
+
+          <li>
+            <div>
+              <strong>Abra el navegador y entre a la página de citas.</strong>
+              Escriba:
+              <a href="https://www.capitalsalud.gov.co/imagen-citas-medicas/" target="_blank">
+                <em>capitalsalud.gov.co/imagen-citas-medicas</em>
+              </a>
+              en la barra de arriba y presione Enter.
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <strong>Busque el número de atención de su Subred.</strong>
+              En la página verá los teléfonos de Sur, Norte, Sur Occidente y Centro Oriente.
+              Llame al número que corresponda a su localidad.
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <strong>Tenga lista su cédula antes de llamar.</strong>
+              La persona que atiende le pedirá su número de documento para verificar que está afiliado a Capital Salud.
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <strong>Indique qué cita necesita.</strong>
+              Diga si necesita medicina general, especialista o cancelar una cita ya programada.
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <strong>Elija el horario que más le convenga.</strong>
+              El asesor le dirá las fechas y horas disponibles. Seleccione la que prefiera.
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <strong>Anote los datos de la cita.</strong>
+              Guarde el nombre de la IPS, la fecha, la hora y el número de confirmación en un papel o en su celular.
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+      <!-- DESPUÉS DE TERMINAR — edite los ítems si cambian los canales de verificación -->
+      <div class="aviso-despues">
+        <strong>📌 Después de terminar, haga esto:</strong>
+        <ul>
+          <li>Tome una foto de la pantalla con el número de confirmación de su cita</li>
+          <li>Anote en un papel el día, la hora, el médico y el lugar de atención</li>
+          <li>Si no recibió confirmación o tuvo problemas, llame a la línea 195 (gratuita, atención al ciudadano
+            Bogotá)</li>
+        </ul>
+      </div>
+    </div>
+    </div><!-- fin panel-capital -->
+
+
+    <!-- ========================
+         PANEL 2 — SANITAS EPS
+         Tarea: Agendar cita médica
+         Portal: sanitas.com.co o app Sanitas
+         Proceso: Portal web con registro previo
+         ======================== -->
+    <div id="panel-sanitas" class="panel-contenido" role="tabpanel">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">🩺</span>
+        <div>
+          <h3>Sanitas EPS</h3>
+          <p class="panel-subtitulo">Agendar cita médica en sanitas.com.co o en la app Sanitas</p>
+        </div>
+      </div>
+
+      <!-- ANTES DE COMENZAR -->
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su número de cédula de ciudadanía</li>
+          <li>Su contraseña del portal Sanitas (si no la tiene, puede crearla gratis en el mismo sitio)</li>
+          <li>Saber qué tipo de médico necesita y si tiene alguna orden médica previa</li>
+          <li>Tener su celular cargado o estar cerca de un tomacorriente</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_SANITAS por el ID real del video de YouTube -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Agendar cita en Sanitas EPS</h4>
+        <p class="video-descripcion">Le mostramos cómo ingresar al portal y sacar su cita paso a paso.</p>
+        <a href="https://youtu.be/IhKpI-yuujs?si=7IaDZGyCYHuoRYA9" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-sanitas.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Resumen visual del proceso</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-sanitas.png" alt="Infografía recarga virtual Tullave 1"
+              class="imagen-infografia" />
+            <p class="infografia-pie">Infografía: Agendar cita médica — Sanitas EPS</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASOS -->
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para agendar su cita en Sanitas EPS</h4>
+        <ol class="lista-pasos salud">
+          <li>
+            <div>
+              <strong>Abra el navegador y vaya a EPS Sanitas.</strong>
+              Escriba
+              <a href="https://www.epssanitas.com/usuarios/web/nuevo-portal-eps/inicio?p_p_id=58&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&saveLastPath=false&_58_struts_action=%2Flogin%2Flogin#gsc.tab=0"
+                target="_blank">
+                <em>epssanitas.com</em>
+              </a>
+              en la barra de arriba y presione Enter.
+
+              También puede usar la aplicación "Sanitas" si la tiene instalada.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Haga clic en "Iniciar sesión" o "Portal de afiliados".</strong>
+              Está en la esquina superior derecha de la página. Si es la primera vez, toque "Regístrese aquí" para crear
+              su cuenta gratis.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese su número de cédula y contraseña.</strong>
+              Si olvidó la contraseña, toque "¿Olvidé mi contraseña?" y el sistema le enviará una nueva a su correo.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Una vez dentro, busque la opción "Agendar cita" o "Mis citas".</strong>
+              Está en el menú principal del portal. Haga clic en esa opción.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Seleccione la ciudad y la clínica o sede de su preferencia.</strong>
+              Verá las sedes disponibles en Bogotá. Escoja la que le quede más cercana o cómoda.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Elija la especialidad o tipo de consulta que necesita.</strong>
+              Por ejemplo: medicina general, pediatría, ginecología, cardiología, etc.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Seleccione el día y la hora disponible en el calendario.</strong>
+              Los espacios libres aparecen resaltados. Toque el que más le convenga.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Confirme la cita.</strong>
+              Revise que el nombre del médico, la fecha, la hora y la sede sean correctos. Presione "Confirmar cita".
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, haga esto:</strong>
+          <ul>
+            <li>Tome foto de la pantalla de confirmación o revise su correo — Sanitas le envía un recordatorio
+              automático</li>
+            <li>Anote el nombre del médico, la dirección de la sede y la hora exacta</li>
+            <li>Si necesita cancelar o cambiar la cita, hágalo con al menos 24 horas de anticipación en el mismo portal
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-sanitas -->
+
+
+    <!-- ========================
+         PANEL 3 — COMPENSAR EPS
+         Tarea: Agendar cita médica
+         Portal: compensar.com o app Compensar
+         Proceso: Portal web zona privada afiliados
+         ======================== -->
+    <div id="panel-compensar" class="panel-contenido" role="tabpanel">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">🏨</span>
+        <div>
+          <h3>Compensar EPS</h3>
+          <p class="panel-subtitulo">Agendar cita médica en compensar.com o en la app Compensar</p>
+        </div>
+      </div>
+
+      <!-- ANTES DE COMENZAR -->
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su número de cédula de ciudadanía</li>
+          <li>Su número de afiliado a Compensar (está en su carnet o en una factura anterior)</li>
+          <li>Saber qué tipo de cita necesita: medicina general, odontología u especialista</li>
+          <li>Conexión a internet estable — el portal de Compensar puede tardar en cargar</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_COMPENSAR por el ID real del video de YouTube -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Agendar cita en Compensar EPS</h4>
+        <p class="video-descripcion">Vea este video para conocer el portal antes de intentarlo usted.</p>
+        <a href="https://youtu.be/e8Lg-bZkF-Y?si=YUxYRG0kPcGrikhw" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-compensar.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Resumen visual del proceso</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-compensar.png" alt="Infografía recarga virtual Tullave 1"
+              class="imagen-infografia" />
+            <p class="infografia-pie">Infografía: Agendar cita médica — Compensar EPS</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASOS -->
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para agendar su cita en Compensar EPS</h4>
+        <ol class="lista-pasos salud">
+          <li>
+            <div>
+              <strong>Abra el navegador y vaya a Compensar.</strong>
+              Escriba
+              <a href="https://seguridad.compensar.com/sign-in?serviceProviderName=WSFEDSALUD-SP&response_type=code%20token&response_mode=form_post&_csrf=2df9e92f-a967-485a-af1c-76a491f1b46b&protocol=OIDC"
+                target="_blank">
+                <em>compensar.com</em>
+              </a>
+              en la barra de arriba y presione Enter.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Haga clic en "Acceso afiliados" o "Zona privada".</strong>
+              Está en la parte superior de la página. Si es la primera vez, regístrese con su cédula y número de
+              afiliado.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese su usuario y contraseña.</strong>
+              Si olvidó su contraseña, use el enlace "Recuperar contraseña" y siga los pasos que le indica el sistema.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Dentro del portal, busque la sección "Salud" y luego "Agendar cita".</strong>
+              El menú puede tener varios niveles. Primero toque "Salud" y dentro de esa sección busque "Citas médicas".
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Seleccione el tipo de servicio que necesita.</strong>
+              Puede ser medicina general, medicina especializada u odontología. Elija el que corresponda.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Escoja la sede de Compensar que prefiera.</strong>
+              Verá las unidades médicas disponibles en Bogotá con su dirección. Seleccione la más cercana a usted.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Elija el médico, el día y la hora disponible.</strong>
+              El calendario mostrará los horarios libres. Toque el que más le convenga.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Confirme la cita y guarde el comprobante.</strong>
+              Presione "Confirmar". Aparecerá un resumen con todos los datos de su cita.
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, haga esto:</strong>
+          <ul>
+            <li>Tome foto del comprobante de confirmación que aparece en pantalla</li>
+            <li>Anote la dirección exacta de la sede y el piso o consultorio si aparece</li>
+            <li>Para cancelar o reasignar, ingrese nuevamente al portal o llame al 601 548 0000</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-compensar -->
+
+
+    <!-- ========================
+         PANEL 4 — SALUD TOTAL
+         Tarea: Agendar cita médica
+         Portal: saludtotal.com.co o app Salud Total
+         Proceso: Zona de afiliados con registro previo
+         ======================== -->
+    <div id="panel-saludtotal" class="panel-contenido" role="tabpanel">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">💊</span>
+        <div>
+          <h3>Salud Total EPS</h3>
+          <p class="panel-subtitulo">Agendar cita médica en saludtotal.com.co o en la app Salud Total</p>
+        </div>
+      </div>
+
+      <!-- ANTES DE COMENZAR -->
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su número de cédula de ciudadanía</li>
+          <li>Su fecha de nacimiento completa</li>
+          <li>Su correo electrónico registrado en Salud Total para recibir la confirmación</li>
+          <li>Saber si la cita es para usted o para un beneficiario de su grupo familiar</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_SALUDTOTAL por el ID real del video de YouTube -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Agendar cita en Salud Total EPS</h4>
+        <p class="video-descripcion">Le mostramos cómo navegar el portal y encontrar la opción de citas.</p>
+        <a href="https://youtu.be/eBaASqtJ1K0?si=ZrEsURAZFnZgQk6A" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-saludtotal.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Resumen visual del proceso</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-saludtotal.png" alt="Infografía recarga virtual Tullave 1"
+              class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Agendar cita médica — Salud Total EPS</p>
+        </div>
+      </div>
+
+      <!-- PASOS -->
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para agendar su cita en Salud Total EPS</h4>
+        <ol class="lista-pasos salud">
+          <li>
+            <div>
+              <strong>Abra el navegador y vaya a Salud Total.</strong>
+              Escriba
+              <a href="https://transaccional.saludtotal.com.co/OficinaVirtual/#/" target="_blank">
+                <em>saludtotal.com.co</em>
+              </a>
+              en la barra de arriba y presione Enter.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Haga clic en "Zona de afiliados" o "Ingrese aquí".</strong>
+              Está en la parte superior o central de la página de inicio, generalmente en color verde o azul.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese su número de cédula y contraseña.</strong>
+              Si es la primera vez, registre su cuenta con su cédula y fecha de nacimiento. El sistema le pedirá crear
+              una contraseña nueva.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>En el menú de la zona privada, busque "Citas médicas" o "Agendar cita".</strong>
+              Puede estar dentro de una sección llamada "Mis servicios" o "Salud en línea".
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Indique si la cita es para usted o para un familiar.</strong>
+              Si es para un beneficiario de su grupo familiar, seleccione su nombre de la lista que aparece.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Elija la especialidad o tipo de consulta.</strong>
+              Seleccione medicina general si es una consulta de rutina, o el especialista si tiene remisión médica.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Seleccione la IPS, el día y la hora disponible.</strong>
+              El sistema mostrará los centros médicos disponibles. Elija fecha y hora en el calendario.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Confirme la cita.</strong>
+              Presione "Confirmar" y espere el mensaje de confirmación en pantalla o en su correo electrónico.
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, haga esto:</strong>
+          <ul>
+            <li>Revise su correo electrónico — Salud Total envía la confirmación con todos los detalles</li>
+            <li>Guarde o tome foto del comprobante con el número de cita asignado</li>
+            <li>Si no puede ingresar al portal o no encuentra la opción, llame al 01 8000 910 900 (línea gratuita)</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-saludtotal -->
+
+
+    <!-- ========================
+         PANEL 5 — SURA EPS
+         Tarea: Agendar cita médica
+         Portal: sura.com o app Mi Sura
+         Proceso: Portal web Mi Sura con registro previo
+         ======================== -->
+    <div id="panel-sura" class="panel-contenido" role="tabpanel">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">🩻</span>
+        <div>
+          <h3>Sura EPS</h3>
+          <p class="panel-subtitulo">Agendar cita médica en sura.com o en la app Mi Sura</p>
+        </div>
+      </div>
+
+      <!-- ANTES DE COMENZAR -->
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su número de cédula de ciudadanía</li>
+          <li>Su contraseña del portal Mi Sura (puede crearla si es la primera vez)</li>
+          <li>Saber si necesita cita por medicina general o por una especialidad en particular</li>
+          <li>Si tiene una orden de remisión, téngala a la mano para saber a qué especialista ir</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_SURA por el ID real del video de YouTube -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Agendar cita en Sura EPS</h4>
+        <p class="video-descripcion">Le explicamos cómo usar el portal o la app Mi Sura para sacar su cita.</p>
+        <a href="https://youtu.be/7UwPZZyl5IU?si=xOKtjDaABLZRNiD5" target="_blank" rel="noopener"
+          class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-sura.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Resumen visual del proceso</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-sura.png" alt="Infografía recarga virtual Tullave 1"
+              class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Agendar cita médica — Sura EPS</p>
+        </div>
+      </div>
+
+      <!-- PASOS -->
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para agendar su cita en Sura EPS</h4>
+        <ol class="lista-pasos salud">
+          <li>
+            <div>
+              <strong>Abra el navegador y vaya a EPS Sura.</strong>
+              Escriba
+              <a href="https://login.sura.com/sso/servicelogin.aspx?continueTo=https%3A%2F%2Fportaleps.epssura.com%2FServiciosUnClick%2F&service=epssura"
+                target="_blank">
+                <em>epssura.com</em>
+              </a>
+              en la barra de arriba y presione Enter.
+              También puede usar la aplicación "Mi Sura" si la tiene instalada en su celular.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Haga clic en "Mi Sura" o "Servicios en línea".</strong>
+              Está en el menú de la parte superior de la página.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ingrese su número de cédula y contraseña.</strong>
+              Si es la primera vez, seleccione "Regístrate" e ingrese su cédula y fecha de nacimiento para crear su
+              cuenta.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Dentro del portal, busque la sección "Salud" y luego "Agendar cita".</strong>
+              En el menú de Mi Sura hay una sección dedicada a servicios de salud. Tóquela para desplegar las opciones.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Seleccione si la cita es para usted o para un beneficiario.</strong>
+              Si tiene familiares afiliados bajo su grupo, puede agendar citas para ellos también desde aquí.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Elija la especialidad o servicio que necesita.</strong>
+              Seleccione medicina general para consultas de rutina, o busque el especialista que le indicó su médico.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Escoja la IPS, el médico, el día y la hora.</strong>
+              El sistema mostrará los centros disponibles con sus horarios libres. Seleccione el que más le convenga.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Confirme la cita y revise los detalles finales.</strong>
+              Verifique que la información sea correcta y presione "Confirmar". Recibirá una notificación o correo de
+              confirmación.
+            </div>
+          </li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, haga esto:</strong>
+          <ul>
+            <li>Tome foto de la pantalla de confirmación o revise el correo — Sura envía un recordatorio antes de la
+              cita</li>
+            <li>Anote el nombre del médico, la dirección del consultorio y la hora exacta en un papel</li>
+            <li>Si necesita ayuda con el portal, llame a la línea de Sura EPS: 018000 945 800 (gratuita)</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-sura -->
+
+
+  </main>
+
+  <!-- BOTÓN VOLVER AL FINAL -->
+  <div class="bloque-volver-final">
+    <a href="index.html" class="btn-volver-final">
+      <span aria-hidden="true">⬅</span> VOLVER AL INICIO
+    </a>
+  </div>
+
+  <footer class="pie-pagina">
+    <strong>NEXA</strong> — Proyecto de Inclusión Digital para Adultos Mayores<br />
+    Fundación Universitaria Konrad Lorenz · Bogotá, Colombia · 2026
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // ---- Tamaño de letra ----
+    let tamanioActual = 22;
+    const TAMANIO_MIN = 18, TAMANIO_MAX = 34;
+    function cambiarTamanio(d) {
+      tamanioActual = d === 0 ? 22 : Math.min(TAMANIO_MAX, Math.max(TAMANIO_MIN, tamanioActual + d * 2));
+      document.documentElement.style.fontSize = tamanioActual + 'px';
+      localStorage.setItem('nexa-tamanio-fuente', tamanioActual);
+    }
+
+    // ---- Selector de EPS ----
+    // Muestra el panel de la EPS seleccionada y oculta los demás
+    function seleccionarOpcion(idPanel, btnClickeado) {
+      document.querySelectorAll('.panel-contenido').forEach(p => p.classList.remove('visible'));
+      document.querySelectorAll('.btn-opcion').forEach(b => b.classList.remove('activo'));
+      document.getElementById(idPanel).classList.add('visible');
+      btnClickeado.classList.add('activo');
+      document.getElementById(idPanel).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Recuperar tamaño guardado al cargar la página
+    window.addEventListener('DOMContentLoaded', function () {
+      const g = localStorage.getItem('nexa-tamanio-fuente');
+      if (g) { tamanioActual = parseInt(g); document.documentElement.style.fontSize = tamanioActual + 'px'; }
+    });
+  </script>
+
+</body>
+
+</html>

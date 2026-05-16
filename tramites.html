@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXA — Trámites Legales</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="cabecera-logo">
+      <div><h1>🔗 NEXA</h1><p class="slogan">Donde las ideas se conectan con el futuro.</p></div>
+    </div>
+    <div class="controles-accesibilidad">
+      <span style="color:white;font-size:0.85rem;font-weight:600;">Tamaño de letra:</span>
+      <button class="btn-tamanio" onclick="cambiarTamanio(-1)">A−</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(0)">A</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(1)">A+</button>
+    </div>
+    <div class="indicador-posicion">📍 Usted está en: Trámites Legales</div>
+  </header>
+
+  <nav class="barra-navegacion">
+    <a href="index.html" class="btn-volver"><span class="flecha">⬅</span> VOLVER AL INICIO</a>
+    <span style="font-size:0.9rem;color:#444;">Sección: <strong>Trámites Legales</strong></span>
+  </nav>
+
+  <main class="contenedor seccion-tramites">
+
+    <h2 class="titulo-pagina">⚖️ Trámites Legales</h2>
+    <p class="subtitulo-pagina">Realice sus trámites con el gobierno de forma segura desde casa. Seleccione el trámite que necesita.</p>
+
+    <!-- ============================================================
+         CUADRÍCULA DE TRÁMITES LEGALES
+         ============================================================ -->
+    <p class="instruccion-selector">👇 Toque el trámite que necesita realizar:</p>
+
+    <div class="grid-opciones">
+
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-registraduria', this)">
+        <span class="icono-opcion">🪪</span>
+        <span class="nombre-opcion">Registraduría Nacional</span>
+        <span class="tarea-opcion">Agendar cita para cédula u otros documentos</span>
+      </button>
+
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-antecedentes', this)">
+        <span class="icono-opcion">📄</span>
+        <span class="nombre-opcion">Certificado de Antecedentes</span>
+        <span class="tarea-opcion">Policía Nacional y Procuraduría</span>
+      </button>
+
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-denuncia', this)">
+        <span class="icono-opcion">🚨</span>
+        <span class="nombre-opcion">Denuncia Virtual</span>
+        <span class="tarea-opcion">Poner una denuncia en línea — Fiscalía</span>
+      </button>
+
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-ramajudicial', this)">
+        <span class="icono-opcion">⚖️</span>
+        <span class="nombre-opcion">Rama Judicial</span>
+        <span class="tarea-opcion">Consultar procesos judiciales</span>
+      </button>
+
+    </div>
+
+
+    <!-- ========================
+         PANEL 1 — REGISTRADURÍA
+         Tarea: Agendar cita
+         ======================== -->
+    <div id="panel-registraduria" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">🪪</span>
+        <div>
+          <h3>Registraduría Nacional del Estado Civil</h3>
+          <p class="panel-subtitulo">Tarea: Agendar una cita para renovar cédula u otros documentos</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su número de cédula de ciudadanía actual</li>
+          <li>Su correo electrónico para recibir la confirmación de la cita</li>
+          <li>Tener claro qué trámite necesita: renovación de cédula, registro civil, etc.</li>
+          <li>Verificar que la Registraduría más cercana a usted esté disponible para el trámite</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_REGISTRADURIA por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Cómo agendar cita en la Registraduría</h4>
+        <p class="video-descripcion">Le mostramos cómo sacar su cita sin hacer fila ni desplazarse primero.</p>
+        <a href="https://www.youtube.com/watch?v=CODIGO_VIDEO_REGISTRADURIA" target="_blank" rel="noopener" class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-registraduria.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Documentos necesarios para la Registraduría</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+               <img src="imagenes/infografia-registraduria.png" alt="Infografía: Documentos necesarios para la Registraduría"
+            class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Cita en la Registraduría Nacional</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para agendar su cita en la Registraduría</h4>
+        <ol class="lista-pasos tramites">
+          <li><div>
+            <strong>Abra el navegador y vaya a registraduria.gov.co.</strong>
+            Escriba la dirección en la barra de arriba y presione Enter.
+          </div></li>
+          <li><div>
+            <strong>Busque la opción "Agendamiento de citas" o "Servicios en línea".</strong>
+            Está en el menú principal de la página. Haga clic en esa opción.
+          </div></li>
+          <li><div>
+            <strong>Seleccione el tipo de trámite que necesita.</strong>
+            Por ejemplo: "Renovación de cédula de ciudadanía" o "Primera vez cédula".
+          </div></li>
+          <li><div>
+            <strong>Ingrese su número de cédula y sus datos personales.</strong>
+            Complete el formulario con su nombre, fecha de nacimiento y correo electrónico.
+          </div></li>
+          <li><div>
+            <strong>Seleccione la Registraduría más cercana a su domicilio.</strong>
+            Puede buscar por localidad o por dirección. Escoja la que le quede más cómoda.
+          </div></li>
+          <li><div>
+            <strong>Elija el día y la hora disponible para su cita.</strong>
+            Los días disponibles aparecen resaltados. Seleccione el que más le convenga.
+          </div></li>
+          <li><div>
+            <strong>Confirme la cita y revise su correo electrónico.</strong>
+            Recibirá un mensaje con el número de confirmación y los detalles de la cita.
+          </div></li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>Imprima o tome foto del comprobante de cita para llevarlo el día de la visita</li>
+            <li>Llegue 15 minutos antes de la hora de su cita</li>
+            <li>Si necesita cancelar o reprogramar, llame a la Registraduría: 601 484 0944</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-registraduria -->
+
+
+    <!-- ========================
+         PANEL 2 — CERTIFICADO DE ANTECEDENTES
+         Tarea: Policía y Procuraduría
+         ======================== -->
+    <div id="panel-antecedentes" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">📄</span>
+        <div>
+          <h3>Certificado de Antecedentes</h3>
+          <p class="panel-subtitulo">Tarea: Descargar su certificado de antecedentes de la Policía y la Procuraduría</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su número de cédula de ciudadanía</li>
+          <li>Saber para qué necesita el certificado (trabajo, trámite, visa, etc.) — eso determina cuál necesita</li>
+          <li>Conexión a internet estable para descargar el PDF</li>
+          <li>El certificado de la Policía (antecedentes penales) y el de la Procuraduría (disciplinarios) son documentos diferentes</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_ANTECEDENTES por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Descargar certificado de antecedentes gratis</h4>
+        <p class="video-descripcion">Le mostramos cómo descargar este documento sin pagar y sin intermediarios.</p>
+        <a href="https://youtu.be/8v8wTH9biLE" target="_blank" rel="noopener" class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-antecedentes.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: ¿Qué diferencia hay entre los dos certificados?</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+               <img src="imagenes/infografia-antecedentes.png" alt="Infografía comparativa sobre certificados de antecedentes policiales y disciplinarios de la Procuraduría con secciones que explican las diferencias, usos y pasos de descarga" class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Diferencia entre certificados de antecedentes</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para descargar el certificado de antecedentes de la Policía</h4>
+        <ol class="lista-pasos tramites">
+          <li><div>
+            <strong>Abra el navegador y vaya a policia.gov.co.</strong>
+            Escriba la dirección en la barra de arriba y presione Enter.
+          </div></li>
+          <li><div>
+            <strong>Busque la opción "Certificado de antecedentes" o "Trámites en línea".</strong>
+            Generalmente está en el menú principal o en la sección de servicios ciudadanos.
+          </div></li>
+          <li><div>
+            <strong>Ingrese su número de cédula de ciudadanía.</strong>
+            Escríbalo sin puntos ni espacios y presione "Consultar" o "Buscar".
+          </div></li>
+          <li><div>
+            <strong>El sistema mostrará su información y el estado de sus antecedentes.</strong>
+            Verá un documento con su nombre y si tiene o no antecedentes registrados.
+          </div></li>
+          <li><div>
+            <strong>Presione el botón "Descargar certificado" o "Imprimir".</strong>
+            Guarde el archivo PDF en su celular o computador.
+          </div></li>
+          <li><div>
+            <strong>Para el certificado de la Procuraduría, vaya a procuraduria.gov.co.</strong>
+            Repita el mismo proceso buscando "Consulta de antecedentes disciplinarios".
+          </div></li>
+        </ol>
+
+        <div class="aviso-consejo">
+          <strong>⚠️ Importante — No pague por este servicio:</strong>
+          El certificado de antecedentes de la Policía y la Procuraduría es completamente GRATUITO.
+          Si alguna página web le pide pagar, es una estafa. Ciérrela inmediatamente.
+        </div>
+
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>Guarde el PDF en una carpeta de "Documentos importantes" en su celular</li>
+            <li>Verifique la vigencia del certificado — algunos trámites exigen uno reciente (no mayor a 30 días)</li>
+            <li>Si tiene dificultades, vaya directamente a una estación de Policía o a la Procuraduría regional</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-antecedentes -->
+
+
+    <!-- ========================
+         PANEL 3 — DENUNCIA VIRTUAL
+         Tarea: Poner denuncia en línea - Fiscalía
+         ======================== -->
+    <div id="panel-denuncia" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">🚨</span>
+        <div>
+          <h3>Denuncia Virtual — Fiscalía</h3>
+          <p class="panel-subtitulo">Tarea: Poner una denuncia en línea sin tener que ir a la Fiscalía</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su número de cédula de ciudadanía</li>
+          <li>La información del hecho que desea denunciar: fecha, lugar y descripción de lo sucedido</li>
+          <li>Si tiene fotos, documentos o evidencias, téngalas a mano en su celular o computador</li>
+          <li>Para emergencias en curso, llame al 123. La denuncia virtual es para hechos ya ocurridos</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_DENUNCIA por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Cómo poner una denuncia virtual en la Fiscalía</h4>
+        <p class="video-descripcion">Le explicamos paso a paso cómo reportar un delito de forma segura en línea.</p>
+        <a href="https://youtu.be/1IUY3S0E5Xs" target="_blank" rel="noopener" class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-denuncia.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: ¿Qué delitos se pueden denunciar virtualmente?</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+               <img src="imagenes/infografia-denuncia.png" alt="Infografía: ¿Qué delitos se pueden denunciar virtualmente?"
+            class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Denuncia Virtual — Fiscalía General de la Nación</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para poner una denuncia virtual en la Fiscalía</h4>
+        <ol class="lista-pasos tramites">
+          <li><div>
+            <strong>Abra el navegador y vaya a fiscalia.gov.co.</strong>
+            Escriba la dirección en la barra de arriba y presione Enter. Verifique el candado 🔒 de seguridad.
+          </div></li>
+          <li><div>
+            <strong>Busque la opción "Denuncia virtual" o "Denuncie aquí".</strong>
+            Está en el menú principal o en un botón destacado de la página de inicio.
+          </div></li>
+          <li><div>
+            <strong>Lea y acepte los términos del servicio.</strong>
+            La Fiscalía le explicará qué tipos de delitos pueden reportarse virtualmente. Haga clic en "Aceptar" para continuar.
+          </div></li>
+          <li><div>
+            <strong>Ingrese sus datos personales como denunciante.</strong>
+            Complete su nombre, número de cédula, dirección y teléfono de contacto.
+          </div></li>
+          <li><div>
+            <strong>Describa el hecho que desea denunciar.</strong>
+            Escriba con calma: qué pasó, cuándo ocurrió, dónde fue y quién o quiénes estuvieron involucrados.
+          </div></li>
+          <li><div>
+            <strong>Adjunte evidencias si las tiene.</strong>
+            Puede subir fotos, documentos o capturas de pantalla. Toque el botón "Adjuntar archivos".
+          </div></li>
+          <li><div>
+            <strong>Revise todo y envíe la denuncia.</strong>
+            Antes de enviar, lea lo que escribió. Si está correcto, presione "Enviar denuncia".
+          </div></li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>Guarde o tome foto del número de radicado que le asigna el sistema — es su comprobante</li>
+            <li>Con ese número podrá hacer seguimiento al estado de su denuncia</li>
+            <li>Para emergencias en curso o si su vida está en peligro, llame al 123 inmediatamente</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-denuncia -->
+
+
+    <!-- ========================
+         PANEL 4 — RAMA JUDICIAL
+         Tarea: Consultar procesos judiciales
+         ======================== -->
+    <div id="panel-ramajudicial" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">⚖️</span>
+        <div>
+          <h3>Rama Judicial</h3>
+          <p class="panel-subtitulo">Tarea: Consultar el estado de un proceso judicial en línea</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>El número del proceso judicial (radicado) — lo tiene en los documentos del proceso o lo puede pedir al abogado</li>
+          <li>Su número de cédula si necesita buscar procesos asociados a su nombre</li>
+          <li>El nombre completo de una de las partes del proceso si no tiene el número de radicado</li>
+          <li>Paciencia: el sistema a veces tarda en cargar por la cantidad de información que maneja</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_RAMAJUDICIAL por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Consultar procesos en la Rama Judicial</h4>
+        <p class="video-descripcion">Aprenda a saber el estado de su proceso sin tener que ir al juzgado.</p>
+        <a href="https://youtu.be/VeIZgGCczKk" target="_blank" rel="noopener" class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-ramajudicial.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Cómo leer la información de un proceso judicial</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+               <img src="imagenes/infografia-ramajudicial.png" alt="Infografía: Las partes de la pantalla de Spotify"
+            class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Consulta de procesos — Rama Judicial</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para consultar un proceso judicial en línea</h4>
+        <ol class="lista-pasos tramites">
+          <li><div>
+            <strong>Abra el navegador y vaya a ramajudicial.gov.co.</strong>
+            Escriba la dirección en la barra de arriba y presione Enter.
+          </div></li>
+          <li><div>
+            <strong>Busque la opción "Consulta de procesos" o "Servicios en línea".</strong>
+            Está en el menú principal de la página. Haga clic en esa opción.
+          </div></li>
+          <li><div>
+            <strong>Elija cómo desea buscar el proceso.</strong>
+            Puede buscar por: número de radicado, nombre de las partes o cédula. Seleccione la opción que aplique.
+          </div></li>
+          <li><div>
+            <strong>Ingrese la información de búsqueda en el campo correspondiente.</strong>
+            Si tiene el número de radicado, escríbalo completo. Si no, ingrese su nombre completo o cédula.
+          </div></li>
+          <li><div>
+            <strong>Presione "Buscar" o "Consultar" y espere los resultados.</strong>
+            El sistema puede tardar unos segundos. Si no carga, espere un momento e intente de nuevo.
+          </div></li>
+          <li><div>
+            <strong>Seleccione el proceso de la lista de resultados para ver los detalles.</strong>
+            Verá información como: juzgado, estado del proceso, última actuación y próxima fecha.
+          </div></li>
+          <li><div>
+            <strong>Tome nota o captura de pantalla de la información relevante.</strong>
+            Anote el estado del proceso y las fechas importantes para compartirlas con su abogado.
+          </div></li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>Tome captura de pantalla del estado actual del proceso para sus registros</li>
+            <li>Comparta la información con su abogado o familiar que le ayuda con el proceso</li>
+            <li>Para orientación jurídica gratuita, puede llamar a la línea de la Defensoría del Pueblo: 018000 914 814</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-ramajudicial -->
+
+  </main>
+
+  <div class="bloque-volver-final">
+    <a href="index.html" class="btn-volver-final"><span>⬅</span> VOLVER AL INICIO</a>
+  </div>
+
+  <footer class="pie-pagina">
+    <strong>NEXA</strong> — Proyecto de Inclusión Digital para Adultos Mayores<br />
+    Fundación Universitaria Konrad Lorenz · Bogotá, Colombia · 2026
+  </footer>
+
+  <script>
+    let tamanioActual = 22;
+    const TAMANIO_MIN = 18, TAMANIO_MAX = 34;
+    function cambiarTamanio(d) {
+      tamanioActual = d === 0 ? 22 : Math.min(TAMANIO_MAX, Math.max(TAMANIO_MIN, tamanioActual + d * 2));
+      document.documentElement.style.fontSize = tamanioActual + 'px';
+      localStorage.setItem('nexa-tamanio-fuente', tamanioActual);
+    }
+    function seleccionarOpcion(idPanel, btn) {
+      document.querySelectorAll('.panel-contenido').forEach(p => p.classList.remove('visible'));
+      document.querySelectorAll('.btn-opcion').forEach(b => b.classList.remove('activo'));
+      document.getElementById(idPanel).classList.add('visible');
+      btn.classList.add('activo');
+      document.getElementById(idPanel).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    window.addEventListener('DOMContentLoaded', function () {
+      const g = localStorage.getItem('nexa-tamanio-fuente');
+      if (g) { tamanioActual = parseInt(g); document.documentElement.style.fontSize = tamanioActual + 'px'; }
+    });
+  </script>
+
+</body>
+</html>

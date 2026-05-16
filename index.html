@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXA — Plataforma Digital para Adultos Mayores</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== CABECERA PRINCIPAL ===== -->
+  <header class="cabecera">
+    <div class="cabecera-logo">
+      <div>
+        <h1>🔗 NEXA</h1>
+        <p class="slogan">Donde las ideas se conectan con el futuro.</p>
+      </div>
+    </div>
+
+    <!-- Botones para cambiar el tamaño de la letra -->
+    <div class="controles-accesibilidad">
+      <span style="color:white; font-size:0.85rem; font-weight:600;">Tamaño de letra:</span>
+      <button class="btn-tamanio" onclick="cambiarTamanio(-1)" aria-label="Reducir tamaño de letra">A−</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(0)"  aria-label="Restablecer tamaño de letra">A</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(1)"  aria-label="Aumentar tamaño de letra">A+</button>
+    </div>
+
+    <!-- Indicador de posición — siempre visible -->
+    <div class="indicador-posicion" aria-current="page">
+      📍 Usted está en: Inicio
+    </div>
+  </header>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main class="contenedor">
+
+    <section class="bienvenida">
+      <h2>¡Bienvenido a NEXA!</h2>
+      <p>
+        Esta plataforma fue hecha <strong>especialmente para usted</strong>.
+        Aquí aprenderá a usar internet de forma sencilla y segura, paso a paso.
+        Elija una de las secciones de abajo para comenzar.
+      </p>
+    </section>
+
+    <!-- GRID DE 5 SECCIONES PRINCIPALES -->
+    <nav aria-label="Secciones principales">
+      <div class="grid-secciones">
+
+        <!-- 1. SALUD -->
+        <a href="salud.html" class="tarjeta-seccion tarjeta-salud" aria-label="Ir a Salud">
+          <span class="icono" aria-hidden="true">🏥</span>
+          <span class="titulo-seccion">SALUD</span>
+          <span class="desc-seccion">Citas, resultados, historia clínica y más</span>
+        </a>
+
+        <!-- 2. OCIO -->
+        <a href="ocio.html" class="tarjeta-seccion tarjeta-ocio" aria-label="Ir a Ocio">
+          <span class="icono" aria-hidden="true">🎭</span>
+          <span class="titulo-seccion">OCIO</span>
+          <span class="desc-seccion">YouTube, Netflix, Spotify y membresías</span>
+        </a>
+
+        <!-- 3. SERVICIOS PÚBLICOS -->
+        <a href="servicios.html" class="tarjeta-seccion tarjeta-servicios" aria-label="Ir a Servicios Públicos">
+          <span class="icono" aria-hidden="true">🏛️</span>
+          <span class="titulo-seccion">SERVICIOS PÚBLICOS</span>
+          <span class="desc-seccion">Agua, luz, gas y teléfono en línea</span>
+        </a>
+
+        <!-- 4. MOVILIDAD -->
+        <a href="movilidad.html" class="tarjeta-seccion tarjeta-movilidad" aria-label="Ir a Movilidad">
+          <span class="icono" aria-hidden="true">🚌</span>
+          <span class="titulo-seccion">MOVILIDAD</span>
+          <span class="desc-seccion">Tullave, TransMiApp, Uber y más</span>
+        </a>
+
+        <!-- 5. TRÁMITES LEGALES -->
+        <a href="tramites.html" class="tarjeta-seccion tarjeta-tramites" aria-label="Ir a Trámites Legales">
+          <span class="icono" aria-hidden="true">⚖️</span>
+          <span class="titulo-seccion">TRÁMITES LEGALES</span>
+          <span class="desc-seccion">Registraduría, antecedentes, denuncia y más</span>
+        </a>
+
+      </div>
+    </nav>
+
+    <hr class="separador" />
+
+    <div class="aviso-consejo">
+      <strong>💡 Consejo para comenzar:</strong>
+      Haga clic en cualquier botón de arriba. Si en algún momento se pierde,
+      busque el botón azul grande que dice <strong>"⬅ VOLVER AL INICIO"</strong> —
+      siempre lo traerá de regreso aquí.
+    </div>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie-pagina">
+    <strong>NEXA</strong> — Proyecto de Inclusión Digital para Adultos Mayores<br />
+    Fundación Universitaria Konrad Lorenz · Bogotá, Colombia · 2026
+  </footer>
+
+  <!-- ===== JAVASCRIPT — Tamaño de Letra ===== -->
+  <script>
+    let tamanioActual = 22;
+    const TAMANIO_MIN = 18;
+    const TAMANIO_MAX = 34;
+
+    function cambiarTamanio(direccion) {
+      if (direccion === 0) {
+        tamanioActual = 22; // Restablecer al valor por defecto
+      } else {
+        tamanioActual += direccion * 2;
+        if (tamanioActual < TAMANIO_MIN) tamanioActual = TAMANIO_MIN;
+        if (tamanioActual > TAMANIO_MAX) tamanioActual = TAMANIO_MAX;
+      }
+      document.documentElement.style.fontSize = tamanioActual + 'px';
+      localStorage.setItem('nexa-tamanio-fuente', tamanioActual);
+    }
+
+    // Recuperar preferencia guardada al cargar la página
+    window.addEventListener('DOMContentLoaded', function () {
+      const guardado = localStorage.getItem('nexa-tamanio-fuente');
+      if (guardado) {
+        tamanioActual = parseInt(guardado);
+        document.documentElement.style.fontSize = tamanioActual + 'px';
+      }
+    });
+  </script>
+
+</body>
+</html>

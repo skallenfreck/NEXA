@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXA — Ocio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="cabecera-logo">
+      <div><h1>🔗 NEXA</h1><p class="slogan">Donde las ideas se conectan con el futuro.</p></div>
+    </div>
+    <div class="controles-accesibilidad">
+      <span style="color:white;font-size:0.85rem;font-weight:600;">Tamaño de letra:</span>
+      <button class="btn-tamanio" onclick="cambiarTamanio(-1)">A−</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(0)">A</button>
+      <button class="btn-tamanio" onclick="cambiarTamanio(1)">A+</button>
+    </div>
+    <div class="indicador-posicion">📍 Usted está en: Ocio</div>
+  </header>
+
+  <nav class="barra-navegacion">
+    <a href="index.html" class="btn-volver"><span class="flecha">⬅</span> VOLVER AL INICIO</a>
+    <span style="font-size:0.9rem;color:#444;">Sección: <strong>Ocio y Entretenimiento</strong></span>
+  </nav>
+
+  <main class="contenedor seccion-ocio">
+
+    <h2 class="titulo-pagina">🎭 Ocio y Entretenimiento</h2>
+    <p class="subtitulo-pagina">Disfrute de música, películas y más desde su celular o computador. Elija la plataforma que le interesa aprender.</p>
+
+    <!-- ============================================================
+         CUADRÍCULA DE OPCIONES DE OCIO
+         Para agregar una plataforma nueva: copie un btn-opcion
+         ============================================================ -->
+    <p class="instruccion-selector">👇 Toque la plataforma que quiere conocer:</p>
+
+    <div class="grid-opciones">
+
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-youtube', this)">
+        <span class="icono-opcion">▶️</span>
+        <span class="nombre-opcion">YouTube</span>
+        <span class="tarea-opcion">El televisor del mundo, gratis</span>
+      </button>
+
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-netflix', this)">
+        <span class="icono-opcion">🎬</span>
+        <span class="nombre-opcion">Netflix</span>
+        <span class="tarea-opcion">Cine en casa con suscripción</span>
+      </button>
+
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-spotify', this)">
+        <span class="icono-opcion">🎵</span>
+        <span class="nombre-opcion">Spotify</span>
+        <span class="tarea-opcion">Música y radio en línea</span>
+      </button>
+
+      <button class="btn-opcion" onclick="seleccionarOpcion('panel-membresias', this)">
+        <span class="icono-opcion">🔒</span>
+        <span class="nombre-opcion">Pago de membresías</span>
+        <span class="tarea-opcion">Seguridad y control de suscripciones</span>
+      </button>
+
+    </div>
+
+
+    <!-- ========================
+         PANEL 1 — YOUTUBE
+         Tarea: Usar YouTube para ver videos gratis
+         ======================== -->
+    <div id="panel-youtube" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">▶️</span>
+        <div>
+          <h3>YouTube</h3>
+          <p class="panel-subtitulo">El televisor del mundo — miles de videos completamente gratis</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su celular o computador con conexión a internet (WiFi o datos)</li>
+          <li>El nombre de una canción, artista, programa o tema que le guste buscar</li>
+          <li>No necesita crear una cuenta para ver videos — es completamente gratis</li>
+          <li>Si quiere guardar videos favoritos, puede crear una cuenta de Google (opcional)</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_YOUTUBE por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Cómo usar YouTube desde cero</h4>
+        <p class="video-descripcion">Le mostramos cómo buscar videos, subir el volumen y encontrar su música favorita.</p>
+        <a href="https://youtu.be/VJy33QmW8kI" target="_blank" rel="noopener" class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-youtube.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Las partes de la pantalla de YouTube</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-youtube.png" alt="Infografía: Las partes de la pantalla de YouTube"
+            class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Partes de la pantalla de YouTube</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para buscar y ver un video en YouTube</h4>
+        <ol class="lista-pasos ocio">
+          <li><div>
+            <strong>Abra YouTube en su celular o computador.</strong>
+            Busque la aplicación con el ícono rojo con un triángulo blanco, o escriba <em>youtube.com</em> en el navegador.
+          </div></li>
+          <li><div>
+            <strong>Toque la lupa 🔍 para buscar.</strong>
+            Está en la parte superior de la pantalla. Al tocarla, aparece un espacio para escribir.
+          </div></li>
+          <li><div>
+            <strong>Escriba lo que quiere ver.</strong>
+            Por ejemplo: "vallenatos clásicos", "misa dominical", "ejercicios para adultos mayores" o el nombre de su artista favorito.
+          </div></li>
+          <li><div>
+            <strong>Toque el video que más le llame la atención de la lista.</strong>
+            Verá una imagen pequeña con el título. Escoja el que tenga más visitas o el título más claro.
+          </div></li>
+          <li><div>
+            <strong>El video comenzará a reproducirse automáticamente.</strong>
+            Para pausarlo, toque la pantalla y presione el botón ⏸. Para continuar, presione ▶.
+          </div></li>
+          <li><div>
+            <strong>Ajuste el volumen con los botones del lado de su celular.</strong>
+            En el computador puede usar la barra de volumen que aparece dentro del video.
+          </div></li>
+          <li><div>
+            <strong>Para ver el video más grande, gire el celular de lado.</strong>
+            O toque el ícono de pantalla completa ⛶ en la esquina inferior derecha del video.
+          </div></li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>YouTube es completamente gratis y no necesita pagar nada para ver videos</li>
+            <li>Si un video le pide pagar o ingresar tarjeta, ¡ciérrelo! Es una trampa. YouTube no cobra</li>
+            <li>Puede ver recetas de cocina, misas, telenovelas, noticias y mucho más sin límite</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-youtube -->
+
+
+    <!-- ========================
+         PANEL 2 — NETFLIX
+         Tarea: Ver películas y series en casa
+         ======================== -->
+    <div id="panel-netflix" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">🎬</span>
+        <div>
+          <h3>Netflix</h3>
+          <p class="panel-subtitulo">Cine en casa — películas y series con suscripción mensual</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Una cuenta de Netflix activa (si no tiene, puede crear una en netflix.com)</li>
+          <li>Su correo electrónico y contraseña de Netflix</li>
+          <li>Buena conexión a internet (WiFi preferiblemente para no gastar datos del celular)</li>
+          <li>Sepa que Netflix tiene un costo mensual — verifique que su suscripción esté activa</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_NETFLIX por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Cómo usar Netflix paso a paso</h4>
+        <p class="video-descripcion">Le enseñamos a ingresar, buscar películas y cambiar el idioma de los subtítulos.</p>
+        <a href="https://www.youtube.com/watch?v=CODIGO_VIDEO_NETFLIX" target="_blank" rel="noopener" class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-netflix.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Cómo navegar en Netflix</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-netflix.png" alt="Infografía: Cómo navegar en Netflix"
+            class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Cómo navegar en Netflix</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para ver una película en Netflix</h4>
+        <ol class="lista-pasos ocio">
+          <li><div>
+            <strong>Abra la aplicación de Netflix o vaya a netflix.com.</strong>
+            En el celular, busque el ícono rojo con la letra N. En el computador, escriba <em>netflix.com</em>.
+          </div></li>
+          <li><div>
+            <strong>Ingrese con su correo y contraseña.</strong>
+            Escríbalos con cuidado. Si olvidó la contraseña, toque "¿Olvidaste tu contraseña?".
+          </div></li>
+          <li><div>
+            <strong>Seleccione su perfil si hay varios en la cuenta.</strong>
+            Toque su nombre o foto de perfil para ingresar a su lista de películas.
+          </div></li>
+          <li><div>
+            <strong>Busque una película usando el ícono de lupa 🔍.</strong>
+            Escriba el nombre de una película o serie, o explore las categorías como "Películas" o "Series".
+          </div></li>
+          <li><div>
+            <strong>Toque la película que le interese para ver su descripción.</strong>
+            Lea de qué se trata antes de verla. Si le gusta, presione el botón grande ▶ "Reproducir".
+          </div></li>
+          <li><div>
+            <strong>Active los subtítulos si los necesita.</strong>
+            Toque la pantalla mientras el video está corriendo y busque el ícono de subtítulos (💬 o CC). Seleccione "Español".
+          </div></li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>Netflix cobra mensualmente — revise su extracto bancario para saber el valor</li>
+            <li>Si no reconoce un cobro de Netflix, llame a su banco inmediatamente</li>
+            <li>Puede pausar y retomar cualquier película desde donde la dejó</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-netflix -->
+
+
+    <!-- ========================
+         PANEL 3 — SPOTIFY
+         Tarea: Escuchar música y radio
+         ======================== -->
+    <div id="panel-spotify" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">🎵</span>
+        <div>
+          <h3>Spotify</h3>
+          <p class="panel-subtitulo">Millones de canciones, podcasts y emisoras de radio — gratis o con suscripción</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su celular o computador con la aplicación Spotify instalada (o use spotify.com)</li>
+          <li>Una cuenta de Spotify — puede crear una gratis con su correo electrónico</li>
+          <li>El nombre de su artista favorito, género musical o emisora que le guste</li>
+          <li>La versión gratuita funciona bien, aunque tiene algunos anuncios</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_SPOTIFY por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Cómo usar Spotify para escuchar música</h4>
+        <p class="video-descripcion">Le mostramos cómo encontrar sus artistas favoritos y escuchar radio.</p>
+        <a href="https://www.youtube.com/watch?v=CODIGO_VIDEO_SPOTIFY" target="_blank" rel="noopener" class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-spotify.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: Las partes de la pantalla de Spotify</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <img src="imagenes/infografia-spotify.png" alt="Infografía: Las partes de la pantalla de Spotify"
+            class="imagen-infografia" />
+          </div>
+          <p class="infografia-pie">Infografía: Pantalla principal de Spotify</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para escuchar música en Spotify</h4>
+        <ol class="lista-pasos ocio">
+          <li><div>
+            <strong>Abra Spotify en su celular o computador.</strong>
+            Busque el ícono verde con líneas curvas negras, o vaya a <em>spotify.com</em>.
+          </div></li>
+          <li><div>
+            <strong>Ingrese con su correo y contraseña, o cree una cuenta gratis.</strong>
+            Si no tiene cuenta, toque "Registrarse gratis" y siga los pasos.
+          </div></li>
+          <li><div>
+            <strong>Toque el ícono de búsqueda 🔍 en la parte inferior de la pantalla.</strong>
+            Aparecerá un espacio para escribir lo que quiere escuchar.
+          </div></li>
+          <li><div>
+            <strong>Escriba el nombre de su artista favorito o un género musical.</strong>
+            Por ejemplo: "Carlos Vives", "vallenatos", "boleros", "música clásica" o "RCN Radio".
+          </div></li>
+          <li><div>
+            <strong>Seleccione la canción, álbum o artista de la lista.</strong>
+            Toque el que desee para ver las opciones. Luego presione ▶ para reproducir.
+          </div></li>
+          <li><div>
+            <strong>Use los controles de reproducción en la parte inferior de la pantalla.</strong>
+            ⏸ para pausar, ⏭ para pasar a la siguiente canción, 🔊 para ajustar el volumen.
+          </div></li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>La versión gratuita de Spotify es completamente válida y tiene millones de canciones</li>
+            <li>Si paga Spotify Premium, verifique el cobro mensual en su extracto bancario</li>
+            <li>Puede crear listas de reproducción con sus canciones favoritas para escucharlas siempre</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-spotify -->
+
+
+    <!-- ========================
+         PANEL 4 — PAGO DE MEMBRESÍAS
+         Tarea: Seguridad y control de suscripciones
+         ======================== -->
+    <div id="panel-membresias" class="panel-contenido">
+
+      <div class="panel-encabezado">
+        <span class="panel-icono">🔒</span>
+        <div>
+          <h3>Pago de Membresías</h3>
+          <p class="panel-subtitulo">Aprenda a controlar sus suscripciones y evitar cobros no deseados</p>
+        </div>
+      </div>
+
+      <div class="aviso-antes">
+        <strong>✅ Antes de comenzar, tenga listo:</strong>
+        <ul>
+          <li>Su extracto bancario o estado de cuenta del último mes</li>
+          <li>Una lista de los servicios que recuerda haber contratado (Netflix, Spotify, etc.)</li>
+          <li>Su correo electrónico para verificar confirmaciones de suscripción</li>
+          <li>El número de su banco por si necesita bloquear un cobro no reconocido</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO — Reemplace CODIGO_VIDEO_MEMBRESIAS por el ID real del tutorial -->
+      <div class="seccion-video">
+        <h4>▶ Video tutorial: Cómo controlar sus suscripciones y membresías</h4>
+        <p class="video-descripcion">Le enseñamos a identificar qué está pagando y cómo cancelar lo que no usa.</p>
+        <a href="https://www.youtube.com/watch?v=CODIGO_VIDEO_MEMBRESIAS" target="_blank" rel="noopener" class="video-link-bloque" aria-label="Ver video en YouTube">
+          <span class="play-icono" aria-hidden="true">▶️</span>
+          <div class="play-texto">
+            <strong>Ver video en YouTube</strong>
+            <span>Toque aquí — el video se abre en una nueva pestaña</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- INFOGRAFÍA — Reemplace por: <img src="imagenes/infografia-membresias.png" alt="..." /> -->
+      <div class="seccion-infografia">
+        <h4>🖼 Infografía: ¿Qué es una membresía y cómo funciona?</h4>
+        <div class="contenedor-infografia">
+          <div class="imagen-placeholder">
+            <span class="icono-placeholder">🔒</span>
+            <p><strong>Aquí va la infografía de membresías</strong></p>
+            <p style="font-size:0.8rem;color:#555;">Guárdela como: <code>imagenes/infografia-membresias.png</code></p>
+          </div>
+          <p class="infografia-pie">Infografía: Cómo funcionan las membresías digitales</p>
+        </div>
+      </div>
+
+      <div class="seccion-tutorial">
+        <h4>📋 Pasos para revisar y controlar sus membresías activas</h4>
+        <ol class="lista-pasos ocio">
+          <li><div>
+            <strong>Revise su extracto bancario del último mes.</strong>
+            Busque cobros pequeños y repetidos (generalmente entre $15.000 y $50.000 mensuales). Esos son membresías.
+          </div></li>
+          <li><div>
+            <strong>Anote el nombre de cada cobro que no reconozca.</strong>
+            Escríbalos en un papel: nombre del servicio, valor y fecha de cobro.
+          </div></li>
+          <li><div>
+            <strong>Para cada membresía que sí usa: verifique que el valor sea correcto.</strong>
+            Ingrese a la plataforma (Netflix, Spotify, etc.) y en "Mi cuenta" verifique el plan y el precio.
+          </div></li>
+          <li><div>
+            <strong>Para cancelar una suscripción que ya no quiere usar:</strong>
+            Ingrese a la plataforma, vaya a "Mi cuenta" o "Configuración" y busque "Cancelar suscripción" o "Cancelar membresía".
+          </div></li>
+          <li><div>
+            <strong>Si hay un cobro que no reconoce en absoluto, llame a su banco.</strong>
+            Dígales el nombre del cobro y la fecha. El banco puede bloquear el cobro y reembolsarle el dinero.
+          </div></li>
+          <li><div>
+            <strong>Nunca ingrese su tarjeta en una página que no sea oficial.</strong>
+            Si una página le pide datos de tarjeta para "activar" un servicio gratuito, es una trampa. Ciérrela.
+          </div></li>
+        </ol>
+        <div class="aviso-despues">
+          <strong>📌 Después de terminar, recuerde:</strong>
+          <ul>
+            <li>Revise su extracto bancario cada mes para detectar cobros no deseados a tiempo</li>
+            <li>Anote en un papel los servicios que tiene activos y su valor mensual</li>
+            <li>Si cancela Netflix o Spotify, todavía podrá usarlo hasta el final del período pagado</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin panel-membresias -->
+
+  </main>
+
+  <div class="bloque-volver-final">
+    <a href="index.html" class="btn-volver-final"><span>⬅</span> VOLVER AL INICIO</a>
+  </div>
+
+  <footer class="pie-pagina">
+    <strong>NEXA</strong> — Proyecto de Inclusión Digital para Adultos Mayores<br />
+    Fundación Universitaria Konrad Lorenz · Bogotá, Colombia · 2026
+  </footer>
+
+  <script>
+    let tamanioActual = 22;
+    const TAMANIO_MIN = 18, TAMANIO_MAX = 34;
+    function cambiarTamanio(d) {
+      tamanioActual = d === 0 ? 22 : Math.min(TAMANIO_MAX, Math.max(TAMANIO_MIN, tamanioActual + d * 2));
+      document.documentElement.style.fontSize = tamanioActual + 'px';
+      localStorage.setItem('nexa-tamanio-fuente', tamanioActual);
+    }
+    function seleccionarOpcion(idPanel, btn) {
+      document.querySelectorAll('.panel-contenido').forEach(p => p.classList.remove('visible'));
+      document.querySelectorAll('.btn-opcion').forEach(b => b.classList.remove('activo'));
+      document.getElementById(idPanel).classList.add('visible');
+      btn.classList.add('activo');
+      document.getElementById(idPanel).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    window.addEventListener('DOMContentLoaded', function () {
+      const g = localStorage.getItem('nexa-tamanio-fuente');
+      if (g) { tamanioActual = parseInt(g); document.documentElement.style.fontSize = tamanioActual + 'px'; }
+    });
+  </script>
+
+</body>
+</html>
